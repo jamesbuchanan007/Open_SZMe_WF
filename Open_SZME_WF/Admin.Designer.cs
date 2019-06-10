@@ -248,9 +248,9 @@
             this.btnAdminMax.FlatAppearance.BorderSize = 0;
             this.btnAdminMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminMax.ForeColor = System.Drawing.Color.White;
-            this.btnAdminMax.Location = new System.Drawing.Point(131, 480);
+            this.btnAdminMax.Location = new System.Drawing.Point(131, 483);
             this.btnAdminMax.Name = "btnAdminMax";
-            this.btnAdminMax.Size = new System.Drawing.Size(37, 23);
+            this.btnAdminMax.Size = new System.Drawing.Size(37, 20);
             this.btnAdminMax.TabIndex = 18;
             this.btnAdminMax.Text = "Max";
             this.toolTip1.SetToolTip(this.btnAdminMax, "Generate Random Password");
