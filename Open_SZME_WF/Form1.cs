@@ -41,5 +41,26 @@ namespace Open_SZME_WF
             SecondWindow sw = new SecondWindow();
             sw.Show();
         }
+
+        private void txtForm1Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                var pw = "prism";
+
+                //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
+                if (txtForm1Password.Text != "prism")
+                {
+                    MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtForm1Password.Clear();
+                    txtForm1Password.Focus();
+                    return;
+                }
+
+                Hide();
+                SecondWindow sw = new SecondWindow();
+                sw.Show();
+            }
+        }
     }
 }

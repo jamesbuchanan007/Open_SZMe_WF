@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Icon_24_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_24_24.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icon_Win" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_Win.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Open_SZMe_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Open SZMe Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1222419" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1222419.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Vault_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vault_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1222419_lPj_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1222419_lPj_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vault_image_16_16_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vault_image_vI1_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vault_image_CG7_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vault_image_CG7_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vault_image_IrL_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vault_image_IrL_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

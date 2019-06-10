@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonForm1Submit = new System.Windows.Forms.Button();
             this.btnForm1Clear = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +46,7 @@
             this.txtForm1Password.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtForm1Password, "Enter Password");
             this.txtForm1Password.UseSystemPasswordChar = true;
+            this.txtForm1Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtForm1Password_KeyPress);
             // 
             // pictureBox1
             // 
@@ -60,11 +60,11 @@
             // 
             // buttonForm1Submit
             // 
-            this.buttonForm1Submit.BackColor = System.Drawing.Color.DarkGreen;
+            this.buttonForm1Submit.BackColor = System.Drawing.Color.Green;
             this.buttonForm1Submit.FlatAppearance.BorderSize = 0;
             this.buttonForm1Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForm1Submit.ForeColor = System.Drawing.Color.White;
-            this.buttonForm1Submit.Location = new System.Drawing.Point(200, 219);
+            this.buttonForm1Submit.Location = new System.Drawing.Point(191, 194);
             this.buttonForm1Submit.Name = "buttonForm1Submit";
             this.buttonForm1Submit.Size = new System.Drawing.Size(75, 23);
             this.buttonForm1Submit.TabIndex = 2;
@@ -74,11 +74,11 @@
             // 
             // btnForm1Clear
             // 
-            this.btnForm1Clear.BackColor = System.Drawing.Color.DarkRed;
+            this.btnForm1Clear.BackColor = System.Drawing.Color.Red;
             this.btnForm1Clear.FlatAppearance.BorderSize = 0;
             this.btnForm1Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForm1Clear.ForeColor = System.Drawing.Color.White;
-            this.btnForm1Clear.Location = new System.Drawing.Point(12, 219);
+            this.btnForm1Clear.Location = new System.Drawing.Point(24, 194);
             this.btnForm1Clear.Name = "btnForm1Clear";
             this.btnForm1Clear.Size = new System.Drawing.Size(75, 23);
             this.btnForm1Clear.TabIndex = 3;
@@ -86,23 +86,12 @@
             this.btnForm1Clear.UseVisualStyleBackColor = false;
             this.btnForm1Clear.Click += new System.EventHandler(this.btnForm1Clear_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Enter Your Password";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(287, 254);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(287, 247);
             this.Controls.Add(this.btnForm1Clear);
             this.Controls.Add(this.buttonForm1Submit);
             this.Controls.Add(this.pictureBox1);
@@ -126,7 +115,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonForm1Submit;
         private System.Windows.Forms.Button btnForm1Clear;
-        private System.Windows.Forms.Label label1;
     }
 }
 

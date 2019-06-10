@@ -63,50 +63,50 @@ namespace Open_SZME_WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1222419 {
+        internal static System.Drawing.Bitmap Open_SZMe_Logo {
             get {
-                object obj = ResourceManager.GetObject("_1222419", resourceCulture);
+                object obj = ResourceManager.GetObject("Open_SZMe_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon _1222419_lPj_icon {
-            get {
-                object obj = ResourceManager.GetObject("_1222419_lPj_icon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Icon_24_24 {
-            get {
-                object obj = ResourceManager.GetObject("Icon_24_24", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Icon_Win {
-            get {
-                object obj = ResourceManager.GetObject("Icon_Win", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Open_SZMe_Logo {
+        internal static System.Drawing.Bitmap Vault_Image {
             get {
-                object obj = ResourceManager.GetObject("Open_SZMe_Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Vault_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon vault_image_16_16_icon {
+            get {
+                object obj = ResourceManager.GetObject("vault_image_16_16_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon vault_image_CG7_icon {
+            get {
+                object obj = ResourceManager.GetObject("vault_image_CG7_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon vault_image_IrL_icon {
+            get {
+                object obj = ResourceManager.GetObject("vault_image_IrL_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }
