@@ -54,6 +54,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondWindow.Designer.cs">
+      <DependentUpon>SecondWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +71,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SecondWindow.resx">
+      <DependentUpon>SecondWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +88,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Open SZMe Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1222419_lPj_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1222419.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_24_24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Win.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

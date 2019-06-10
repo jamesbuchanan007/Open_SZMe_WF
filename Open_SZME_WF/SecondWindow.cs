@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Open_SZME_WF
 {
-    public partial class Form1 : Form
+    public partial class SecondWindow : Form
     {
-        public Form1()
+        public SecondWindow()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
