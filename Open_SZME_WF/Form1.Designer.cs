@@ -70,6 +70,7 @@
             this.buttonForm1Submit.TabIndex = 2;
             this.buttonForm1Submit.Text = "Submit";
             this.buttonForm1Submit.UseVisualStyleBackColor = false;
+            this.buttonForm1Submit.Click += new System.EventHandler(this.buttonForm1Submit_Click);
             // 
             // btnForm1Clear
             // 
@@ -83,7 +84,7 @@
             this.btnForm1Clear.TabIndex = 3;
             this.btnForm1Clear.Text = "Clear";
             this.btnForm1Clear.UseVisualStyleBackColor = false;
-            this.btnForm1Clear.Click += new System.EventHandler(this.button2_Click);
+            this.btnForm1Clear.Click += new System.EventHandler(this.btnForm1Clear_Click);
             // 
             // label1
             // 
@@ -110,6 +111,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
