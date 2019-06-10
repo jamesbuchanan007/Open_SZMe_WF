@@ -45,6 +45,8 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn2ndFormPastePw = new System.Windows.Forms.Button();
+            this.btn2ndFormClearClipboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(335, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -63,7 +65,7 @@
             // 
             this.cmbSecondFormProgramOrSite.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbSecondFormProgramOrSite.FormattingEnabled = true;
-            this.cmbSecondFormProgramOrSite.Location = new System.Drawing.Point(118, 128);
+            this.cmbSecondFormProgramOrSite.Location = new System.Drawing.Point(118, 134);
             this.cmbSecondFormProgramOrSite.Name = "cmbSecondFormProgramOrSite";
             this.cmbSecondFormProgramOrSite.Size = new System.Drawing.Size(236, 21);
             this.cmbSecondFormProgramOrSite.TabIndex = 1;
@@ -74,7 +76,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(115, 112);
+            this.label1.Location = new System.Drawing.Point(115, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 2;
@@ -83,7 +85,7 @@
             // txtSecondFormPassword
             // 
             this.txtSecondFormPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSecondFormPassword.Location = new System.Drawing.Point(117, 233);
+            this.txtSecondFormPassword.Location = new System.Drawing.Point(117, 239);
             this.txtSecondFormPassword.Name = "txtSecondFormPassword";
             this.txtSecondFormPassword.ReadOnly = true;
             this.txtSecondFormPassword.Size = new System.Drawing.Size(237, 20);
@@ -95,7 +97,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(115, 214);
+            this.label2.Location = new System.Drawing.Point(115, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
@@ -108,7 +110,7 @@
             this.btnSecondFormAdd.FlatAppearance.BorderSize = 0;
             this.btnSecondFormAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecondFormAdd.ForeColor = System.Drawing.Color.White;
-            this.btnSecondFormAdd.Location = new System.Drawing.Point(19, 126);
+            this.btnSecondFormAdd.Location = new System.Drawing.Point(19, 132);
             this.btnSecondFormAdd.Name = "btnSecondFormAdd";
             this.btnSecondFormAdd.Size = new System.Drawing.Size(75, 23);
             this.btnSecondFormAdd.TabIndex = 5;
@@ -123,7 +125,7 @@
             this.btnSecondFormEdit.FlatAppearance.BorderSize = 0;
             this.btnSecondFormEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecondFormEdit.ForeColor = System.Drawing.Color.White;
-            this.btnSecondFormEdit.Location = new System.Drawing.Point(19, 155);
+            this.btnSecondFormEdit.Location = new System.Drawing.Point(19, 161);
             this.btnSecondFormEdit.Name = "btnSecondFormEdit";
             this.btnSecondFormEdit.Size = new System.Drawing.Size(75, 23);
             this.btnSecondFormEdit.TabIndex = 6;
@@ -138,7 +140,7 @@
             this.btnSecondFormDelete.FlatAppearance.BorderSize = 0;
             this.btnSecondFormDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecondFormDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSecondFormDelete.Location = new System.Drawing.Point(19, 184);
+            this.btnSecondFormDelete.Location = new System.Drawing.Point(19, 190);
             this.btnSecondFormDelete.Name = "btnSecondFormDelete";
             this.btnSecondFormDelete.Size = new System.Drawing.Size(75, 23);
             this.btnSecondFormDelete.TabIndex = 7;
@@ -153,7 +155,7 @@
             this.btnSecondFormExit.FlatAppearance.BorderSize = 0;
             this.btnSecondFormExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecondFormExit.ForeColor = System.Drawing.Color.White;
-            this.btnSecondFormExit.Location = new System.Drawing.Point(279, 415);
+            this.btnSecondFormExit.Location = new System.Drawing.Point(279, 434);
             this.btnSecondFormExit.Name = "btnSecondFormExit";
             this.btnSecondFormExit.Size = new System.Drawing.Size(75, 23);
             this.btnSecondFormExit.TabIndex = 8;
@@ -165,7 +167,7 @@
             // txtSecondFormUserId
             // 
             this.txtSecondFormUserId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSecondFormUserId.Location = new System.Drawing.Point(117, 180);
+            this.txtSecondFormUserId.Location = new System.Drawing.Point(117, 186);
             this.txtSecondFormUserId.Name = "txtSecondFormUserId";
             this.txtSecondFormUserId.ReadOnly = true;
             this.txtSecondFormUserId.Size = new System.Drawing.Size(237, 20);
@@ -175,7 +177,7 @@
             // txtSecondFormMisc
             // 
             this.txtSecondFormMisc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSecondFormMisc.Location = new System.Drawing.Point(19, 285);
+            this.txtSecondFormMisc.Location = new System.Drawing.Point(19, 304);
             this.txtSecondFormMisc.Multiline = true;
             this.txtSecondFormMisc.Name = "txtSecondFormMisc";
             this.txtSecondFormMisc.ReadOnly = true;
@@ -190,7 +192,7 @@
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(19, 415);
+            this.btnAdmin.Location = new System.Drawing.Point(19, 434);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 23);
             this.btnAdmin.TabIndex = 13;
@@ -204,7 +206,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(114, 161);
+            this.label3.Location = new System.Drawing.Point(114, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 10;
@@ -215,18 +217,53 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(20, 269);
+            this.label4.Location = new System.Drawing.Point(20, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Miscellaneous";
+            // 
+            // btn2ndFormPastePw
+            // 
+            this.btn2ndFormPastePw.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2ndFormPastePw.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn2ndFormPastePw.Enabled = false;
+            this.btn2ndFormPastePw.FlatAppearance.BorderSize = 0;
+            this.btn2ndFormPastePw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2ndFormPastePw.ForeColor = System.Drawing.Color.White;
+            this.btn2ndFormPastePw.Location = new System.Drawing.Point(118, 265);
+            this.btn2ndFormPastePw.Name = "btn2ndFormPastePw";
+            this.btn2ndFormPastePw.Size = new System.Drawing.Size(50, 23);
+            this.btn2ndFormPastePw.TabIndex = 20;
+            this.btn2ndFormPastePw.Text = "Paste";
+            this.toolTip1.SetToolTip(this.btn2ndFormPastePw, "Paste Random Password from Clipboard");
+            this.btn2ndFormPastePw.UseVisualStyleBackColor = false;
+            this.btn2ndFormPastePw.Click += new System.EventHandler(this.btn2ndFormPastePw_Click);
+            // 
+            // btn2ndFormClearClipboard
+            // 
+            this.btn2ndFormClearClipboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2ndFormClearClipboard.BackColor = System.Drawing.Color.Red;
+            this.btn2ndFormClearClipboard.FlatAppearance.BorderSize = 0;
+            this.btn2ndFormClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2ndFormClearClipboard.ForeColor = System.Drawing.Color.White;
+            this.btn2ndFormClearClipboard.Location = new System.Drawing.Point(315, 265);
+            this.btn2ndFormClearClipboard.Name = "btn2ndFormClearClipboard";
+            this.btn2ndFormClearClipboard.Size = new System.Drawing.Size(39, 23);
+            this.btn2ndFormClearClipboard.TabIndex = 21;
+            this.btn2ndFormClearClipboard.Text = "Clear";
+            this.toolTip1.SetToolTip(this.btn2ndFormClearClipboard, "Clear Clipboard");
+            this.btn2ndFormClearClipboard.UseVisualStyleBackColor = false;
+            this.btn2ndFormClearClipboard.Click += new System.EventHandler(this.btn2ndFormClearClipboard_Click);
             // 
             // SecondWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(374, 456);
+            this.ClientSize = new System.Drawing.Size(372, 469);
+            this.Controls.Add(this.btn2ndFormClearClipboard);
+            this.Controls.Add(this.btn2ndFormPastePw);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSecondFormMisc);
@@ -270,5 +307,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSecondFormMisc;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btn2ndFormPastePw;
+        private System.Windows.Forms.Button btn2ndFormClearClipboard;
     }
 }

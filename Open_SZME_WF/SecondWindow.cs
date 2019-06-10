@@ -41,5 +41,15 @@ namespace Open_SZME_WF
             ap.ShowDialog();
             Show();
         }
+
+        private void btn2ndFormPastePw_Click(object sender, EventArgs e)
+        {
+            txtSecondFormPassword.Text = Clipboard.GetText();
+        }
+
+        private void btn2ndFormClearClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+        }
     }
 }

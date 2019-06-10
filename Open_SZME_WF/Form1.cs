@@ -29,7 +29,7 @@ namespace Open_SZME_WF
 
             //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
 
-            if (txtForm1Password.Text != "")
+            if (!string.IsNullOrEmpty(txtForm1Password.Text))
             {
                 MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtForm1Password.Clear();
@@ -49,7 +49,7 @@ namespace Open_SZME_WF
                 var pw = "prism";
 
                 //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
-                if (txtForm1Password.Text != "prism")
+                if (!string.IsNullOrEmpty(txtForm1Password.Text))
                 {
                     MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtForm1Password.Clear();

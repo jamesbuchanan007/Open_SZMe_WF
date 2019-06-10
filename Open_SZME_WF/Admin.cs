@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Open_SZME_WF.Properties;
+using System.Security.Cryptography;
 
 namespace Open_SZME_WF
 {
@@ -149,6 +150,62 @@ namespace Open_SZME_WF
             }
 
             return ds;
+        }
+
+        private void btnAdminGenerate_Click(object sender, EventArgs e)
+        {
+            string randowPw;
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            const string validWithSpecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890*$-+?_&=!%{}/@";
+
+            var convert = int.TryParse(numericAdminNumCharacters.Text, out var numChar);
+
+            if (!convert)
+            {
+                MessageBox.Show("Number of Characters must be a Number.", "Open SZMe", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                numericAdminNumCharacters.Text = "5";
+                numericAdminNumCharacters.Focus();
+                return;
+            }
+
+            if (!chkBxSpecialCharacter.Checked)
+            {
+                StringBuilder res = new StringBuilder();
+                Random rnd = new Random();
+                while (0 < numChar--)
+                {
+                    res.Append(valid[rnd.Next(valid.Length)]);
+                }
+
+                txtAdminRandomPassword.Text = res.ToString();
+            }
+            else
+            {
+                StringBuilder res = new StringBuilder();
+                Random rnd = new Random();
+                while (0 < numChar--)
+                {
+                    res.Append(validWithSpecial[rnd.Next(validWithSpecial.Length)]);
+                }
+
+                txtAdminRandomPassword.Text = res.ToString();
+            }
+        }
+
+        private void btnAdminMax_Click(object sender, EventArgs e)
+        {
+            numericAdminNumCharacters.Text = "32";
+        }
+
+        private void btnAdminRPGToClip_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtAdminRandomPassword.Text);
+        }
+
+        private void btnAdminClearClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
         }
     }
 }

@@ -41,13 +41,26 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnAdminStartOver = new System.Windows.Forms.Button();
             this.btnAdminCancel = new System.Windows.Forms.Button();
+            this.txtAdminRandomPassword = new System.Windows.Forms.TextBox();
+            this.numericAdminNumCharacters = new System.Windows.Forms.NumericUpDown();
+            this.chkBxSpecialCharacter = new System.Windows.Forms.CheckBox();
+            this.btnAdminGenerate = new System.Windows.Forms.Button();
+            this.btnAdminMax = new System.Windows.Forms.Button();
+            this.btnAdminRPGToClip = new System.Windows.Forms.Button();
+            this.btnAdminClearClipboard = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -56,7 +69,8 @@
             // 
             // txtAdminOldPassword
             // 
-            this.txtAdminOldPassword.Location = new System.Drawing.Point(45, 149);
+            this.txtAdminOldPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminOldPassword.Location = new System.Drawing.Point(45, 148);
             this.txtAdminOldPassword.Name = "txtAdminOldPassword";
             this.txtAdminOldPassword.Size = new System.Drawing.Size(242, 20);
             this.txtAdminOldPassword.TabIndex = 1;
@@ -65,9 +79,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 130);
+            this.label1.Location = new System.Drawing.Point(45, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 2;
@@ -75,9 +90,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(45, 187);
+            this.label2.Location = new System.Drawing.Point(45, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 4;
@@ -85,7 +101,8 @@
             // 
             // txtAdminNewPassword1
             // 
-            this.txtAdminNewPassword1.Location = new System.Drawing.Point(45, 206);
+            this.txtAdminNewPassword1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminNewPassword1.Location = new System.Drawing.Point(45, 205);
             this.txtAdminNewPassword1.Name = "txtAdminNewPassword1";
             this.txtAdminNewPassword1.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword1.TabIndex = 3;
@@ -94,9 +111,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(45, 244);
+            this.label3.Location = new System.Drawing.Point(45, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 6;
@@ -104,7 +122,8 @@
             // 
             // txtAdminNewPassword2
             // 
-            this.txtAdminNewPassword2.Location = new System.Drawing.Point(45, 263);
+            this.txtAdminNewPassword2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminNewPassword2.Location = new System.Drawing.Point(45, 262);
             this.txtAdminNewPassword2.Name = "txtAdminNewPassword2";
             this.txtAdminNewPassword2.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword2.TabIndex = 5;
@@ -113,11 +132,12 @@
             // 
             // btnAdminSubmit
             // 
+            this.btnAdminSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdminSubmit.BackColor = System.Drawing.Color.Green;
             this.btnAdminSubmit.FlatAppearance.BorderSize = 0;
             this.btnAdminSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnAdminSubmit.Location = new System.Drawing.Point(212, 316);
+            this.btnAdminSubmit.Location = new System.Drawing.Point(212, 315);
             this.btnAdminSubmit.Name = "btnAdminSubmit";
             this.btnAdminSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnAdminSubmit.TabIndex = 7;
@@ -128,11 +148,12 @@
             // 
             // btnAdminStartOver
             // 
+            this.btnAdminStartOver.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdminStartOver.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAdminStartOver.FlatAppearance.BorderSize = 0;
             this.btnAdminStartOver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminStartOver.ForeColor = System.Drawing.Color.White;
-            this.btnAdminStartOver.Location = new System.Drawing.Point(128, 316);
+            this.btnAdminStartOver.Location = new System.Drawing.Point(128, 315);
             this.btnAdminStartOver.Name = "btnAdminStartOver";
             this.btnAdminStartOver.Size = new System.Drawing.Size(75, 23);
             this.btnAdminStartOver.TabIndex = 8;
@@ -143,11 +164,12 @@
             // 
             // btnAdminCancel
             // 
+            this.btnAdminCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdminCancel.BackColor = System.Drawing.Color.Red;
             this.btnAdminCancel.FlatAppearance.BorderSize = 0;
             this.btnAdminCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminCancel.ForeColor = System.Drawing.Color.White;
-            this.btnAdminCancel.Location = new System.Drawing.Point(42, 316);
+            this.btnAdminCancel.Location = new System.Drawing.Point(45, 315);
             this.btnAdminCancel.Name = "btnAdminCancel";
             this.btnAdminCancel.Size = new System.Drawing.Size(75, 23);
             this.btnAdminCancel.TabIndex = 9;
@@ -156,12 +178,165 @@
             this.btnAdminCancel.UseVisualStyleBackColor = false;
             this.btnAdminCancel.Click += new System.EventHandler(this.btnAdminCancel_Click);
             // 
+            // txtAdminRandomPassword
+            // 
+            this.txtAdminRandomPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminRandomPassword.Location = new System.Drawing.Point(45, 406);
+            this.txtAdminRandomPassword.Name = "txtAdminRandomPassword";
+            this.txtAdminRandomPassword.ReadOnly = true;
+            this.txtAdminRandomPassword.Size = new System.Drawing.Size(242, 20);
+            this.txtAdminRandomPassword.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.txtAdminRandomPassword, "Random Password");
+            // 
+            // numericAdminNumCharacters
+            // 
+            this.numericAdminNumCharacters.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numericAdminNumCharacters.Location = new System.Drawing.Point(45, 483);
+            this.numericAdminNumCharacters.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numericAdminNumCharacters.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericAdminNumCharacters.Name = "numericAdminNumCharacters";
+            this.numericAdminNumCharacters.Size = new System.Drawing.Size(80, 20);
+            this.numericAdminNumCharacters.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.numericAdminNumCharacters, "Number of Characters (Max 20)");
+            this.numericAdminNumCharacters.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // chkBxSpecialCharacter
+            // 
+            this.chkBxSpecialCharacter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkBxSpecialCharacter.AutoSize = true;
+            this.chkBxSpecialCharacter.ForeColor = System.Drawing.Color.White;
+            this.chkBxSpecialCharacter.Location = new System.Drawing.Point(45, 516);
+            this.chkBxSpecialCharacter.Name = "chkBxSpecialCharacter";
+            this.chkBxSpecialCharacter.Size = new System.Drawing.Size(153, 17);
+            this.chkBxSpecialCharacter.TabIndex = 14;
+            this.chkBxSpecialCharacter.Text = "Include Special Characters";
+            this.toolTip1.SetToolTip(this.chkBxSpecialCharacter, "Include Special Characters (~`!@#$%^&*()+=_-{}[], etc.)");
+            this.chkBxSpecialCharacter.UseVisualStyleBackColor = true;
+            // 
+            // btnAdminGenerate
+            // 
+            this.btnAdminGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdminGenerate.BackColor = System.Drawing.Color.Green;
+            this.btnAdminGenerate.FlatAppearance.BorderSize = 0;
+            this.btnAdminGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminGenerate.ForeColor = System.Drawing.Color.White;
+            this.btnAdminGenerate.Location = new System.Drawing.Point(212, 510);
+            this.btnAdminGenerate.Name = "btnAdminGenerate";
+            this.btnAdminGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnAdminGenerate.TabIndex = 15;
+            this.btnAdminGenerate.Text = "Generate";
+            this.toolTip1.SetToolTip(this.btnAdminGenerate, "Generate Random Password");
+            this.btnAdminGenerate.UseVisualStyleBackColor = false;
+            this.btnAdminGenerate.Click += new System.EventHandler(this.btnAdminGenerate_Click);
+            // 
+            // btnAdminMax
+            // 
+            this.btnAdminMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdminMax.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminMax.FlatAppearance.BorderSize = 0;
+            this.btnAdminMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminMax.ForeColor = System.Drawing.Color.White;
+            this.btnAdminMax.Location = new System.Drawing.Point(131, 480);
+            this.btnAdminMax.Name = "btnAdminMax";
+            this.btnAdminMax.Size = new System.Drawing.Size(37, 23);
+            this.btnAdminMax.TabIndex = 18;
+            this.btnAdminMax.Text = "Max";
+            this.toolTip1.SetToolTip(this.btnAdminMax, "Generate Random Password");
+            this.btnAdminMax.UseVisualStyleBackColor = false;
+            this.btnAdminMax.Click += new System.EventHandler(this.btnAdminMax_Click);
+            // 
+            // btnAdminRPGToClip
+            // 
+            this.btnAdminRPGToClip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdminRPGToClip.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
+            this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(45, 429);
+            this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
+            this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
+            this.btnAdminRPGToClip.TabIndex = 19;
+            this.btnAdminRPGToClip.Text = "Copy";
+            this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
+            this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
+            this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
+            // 
+            // btnAdminClearClipboard
+            // 
+            this.btnAdminClearClipboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdminClearClipboard.BackColor = System.Drawing.Color.Red;
+            this.btnAdminClearClipboard.FlatAppearance.BorderSize = 0;
+            this.btnAdminClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminClearClipboard.ForeColor = System.Drawing.Color.White;
+            this.btnAdminClearClipboard.Location = new System.Drawing.Point(248, 429);
+            this.btnAdminClearClipboard.Name = "btnAdminClearClipboard";
+            this.btnAdminClearClipboard.Size = new System.Drawing.Size(39, 23);
+            this.btnAdminClearClipboard.TabIndex = 20;
+            this.btnAdminClearClipboard.Text = "Clear";
+            this.toolTip1.SetToolTip(this.btnAdminClearClipboard, "Clear Clipboard");
+            this.btnAdminClearClipboard.UseVisualStyleBackColor = false;
+            this.btnAdminClearClipboard.Click += new System.EventHandler(this.btnAdminClearClipboard_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(45, 387);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Random Password Generator";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(45, 467);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "# of Characters";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Location = new System.Drawing.Point(4, 365);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(326, 2);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "label6";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(334, 368);
+            this.ClientSize = new System.Drawing.Size(330, 563);
+            this.Controls.Add(this.btnAdminClearClipboard);
+            this.Controls.Add(this.btnAdminRPGToClip);
+            this.Controls.Add(this.btnAdminMax);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnAdminGenerate);
+            this.Controls.Add(this.chkBxSpecialCharacter);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericAdminNumCharacters);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtAdminRandomPassword);
             this.Controls.Add(this.btnAdminCancel);
             this.Controls.Add(this.btnAdminStartOver);
             this.Controls.Add(this.btnAdminSubmit);
@@ -177,6 +352,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe - Admin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +371,16 @@
         private System.Windows.Forms.Button btnAdminSubmit;
         private System.Windows.Forms.Button btnAdminStartOver;
         private System.Windows.Forms.Button btnAdminCancel;
+        private System.Windows.Forms.TextBox txtAdminRandomPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericAdminNumCharacters;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox chkBxSpecialCharacter;
+        private System.Windows.Forms.Button btnAdminGenerate;
+        private System.Windows.Forms.Label label6;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button btnAdminMax;
+        private System.Windows.Forms.Button btnAdminRPGToClip;
+        private System.Windows.Forms.Button btnAdminClearClipboard;
     }
 }
