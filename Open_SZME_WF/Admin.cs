@@ -204,7 +204,20 @@ namespace Open_SZME_WF
 
         private void btnAdminClearClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.Clear();
+            try
+            {
+                Clipboard.Clear();
+                MessageBox.Show("Clipboard is Cleared", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception eg)
+            {
+                MessageBox.Show(eg.ToString());
+            }
+        }
+
+        private void btnAdminBack_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

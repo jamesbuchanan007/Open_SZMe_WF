@@ -67,7 +67,8 @@ namespace Open_SZME_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            bool isInitialLogin = true;
+            //CHANGE TO TRUE PRIOR TO PUBLISH
+            bool isInitialLogin = false;
 
             while (isInitialLogin)
             {
@@ -115,6 +116,5 @@ namespace Open_SZME_WF
 
             return ds;
         }
-
     }
 }

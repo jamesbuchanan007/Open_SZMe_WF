@@ -24,13 +24,13 @@ namespace Open_SZME_WF
 
         private void btnSecondFormExit_Click(object sender, EventArgs e)
         {
-
             DialogResult result = MessageBox.Show("Exit Application?", "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                Clipboard.Clear();
+                Environment.Exit(1);
             }
         }
 
@@ -49,7 +49,15 @@ namespace Open_SZME_WF
 
         private void btn2ndFormClearClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.Clear();
+            try
+            {
+                Clipboard.Clear();
+                MessageBox.Show("Clipboard is Cleared", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception eg)
+            {
+                MessageBox.Show(eg.ToString());
+            }
         }
     }
 }
