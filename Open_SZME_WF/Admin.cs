@@ -200,6 +200,7 @@ namespace Open_SZME_WF
         private void btnAdminRPGToClip_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtAdminRandomPassword.Text);
+            Hide();
         }
 
         private void btnAdminClearClipboard_Click(object sender, EventArgs e)
@@ -213,11 +214,6 @@ namespace Open_SZME_WF
             {
                 MessageBox.Show(eg.ToString());
             }
-        }
-
-        private void btnAdminBack_Click(object sender, EventArgs e)
-        {
-            Hide();
         }
     }
 }

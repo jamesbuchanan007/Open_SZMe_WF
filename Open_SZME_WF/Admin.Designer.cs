@@ -52,7 +52,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.btnAdminBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).BeginInit();
             this.SuspendLayout();
@@ -281,7 +280,7 @@
             this.btnAdminClearClipboard.FlatAppearance.BorderSize = 0;
             this.btnAdminClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminClearClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnAdminClearClipboard.Location = new System.Drawing.Point(111, 422);
+            this.btnAdminClearClipboard.Location = new System.Drawing.Point(262, 422);
             this.btnAdminClearClipboard.Name = "btnAdminClearClipboard";
             this.btnAdminClearClipboard.Size = new System.Drawing.Size(39, 23);
             this.btnAdminClearClipboard.TabIndex = 20;
@@ -322,29 +321,12 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "label6";
             // 
-            // btnAdminBack
-            // 
-            this.btnAdminBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdminBack.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdminBack.FlatAppearance.BorderSize = 0;
-            this.btnAdminBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminBack.ForeColor = System.Drawing.Color.White;
-            this.btnAdminBack.Location = new System.Drawing.Point(262, 422);
-            this.btnAdminBack.Name = "btnAdminBack";
-            this.btnAdminBack.Size = new System.Drawing.Size(39, 23);
-            this.btnAdminBack.TabIndex = 21;
-            this.btnAdminBack.Text = "<<<";
-            this.toolTip1.SetToolTip(this.btnAdminBack, "Back To Previous Screen");
-            this.btnAdminBack.UseVisualStyleBackColor = false;
-            this.btnAdminBack.Click += new System.EventHandler(this.btnAdminBack_Click);
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(359, 560);
-            this.Controls.Add(this.btnAdminBack);
             this.Controls.Add(this.btnAdminClearClipboard);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.btnAdminMax);
@@ -400,6 +382,5 @@
         private System.Windows.Forms.Button btnAdminMax;
         private System.Windows.Forms.Button btnAdminRPGToClip;
         private System.Windows.Forms.Button btnAdminClearClipboard;
-        private System.Windows.Forms.Button btnAdminBack;
     }
 }
