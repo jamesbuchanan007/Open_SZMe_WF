@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Open_SZME_WF.Properties;
 
 namespace Open_SZME_WF
 {
@@ -62,5 +64,57 @@ namespace Open_SZME_WF
                 sw.Show();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            bool isInitialLogin = true;
+
+            while (isInitialLogin)
+            {
+                var password = GetPassword();
+
+                if (password.Tables[0].Rows.Count == 0)
+                Hide();
+                InitialLogin il = new InitialLogin();
+                il.ShowDialog();
+
+                password = GetPassword();
+                if (password.Tables[0].Rows.Count > 0) isInitialLogin = false;
+            }
+            Show();
+        }
+
+        public DataSet GetPassword()
+        {
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            string sql;
+
+            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "Select TOP 1 * from LoginTable ORDER BY LoginId Desc";
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "LoginTable");
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return ds;
+        }
+
     }
 }

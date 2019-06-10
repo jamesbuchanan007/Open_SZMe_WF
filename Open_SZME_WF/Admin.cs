@@ -154,7 +154,6 @@ namespace Open_SZME_WF
 
         private void btnAdminGenerate_Click(object sender, EventArgs e)
         {
-            string randowPw;
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             const string validWithSpecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890*$-+?_&=!%{}/@";
 
