@@ -25,11 +25,11 @@ namespace Open_SZME_WF
 
         private void buttonForm1Submit_Click(object sender, EventArgs e)
         {
-            var pw = "prism";
+            var pw = "";
 
             //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
 
-            if (txtForm1Password.Text != "prism")
+            if (txtForm1Password.Text != "")
             {
                 MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtForm1Password.Clear();

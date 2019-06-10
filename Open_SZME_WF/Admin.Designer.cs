@@ -124,6 +124,7 @@
             this.btnAdminSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnAdminSubmit, "Submit");
             this.btnAdminSubmit.UseVisualStyleBackColor = false;
+            this.btnAdminSubmit.Click += new System.EventHandler(this.btnAdminSubmit_Click);
             // 
             // btnAdminStartOver
             // 
