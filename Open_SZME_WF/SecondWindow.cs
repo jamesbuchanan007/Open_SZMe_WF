@@ -33,5 +33,13 @@ namespace Open_SZME_WF
                 Application.Exit();
             }
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Admin ap = new Admin();
+            ap.ShowDialog();
+            Show();
+        }
     }
 }

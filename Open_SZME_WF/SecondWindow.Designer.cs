@@ -42,9 +42,9 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtSecondFormUserId = new System.Windows.Forms.TextBox();
             this.txtSecondFormMisc = new System.Windows.Forms.TextBox();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,6 +183,22 @@
             this.txtSecondFormMisc.TabIndex = 11;
             this.toolTip1.SetToolTip(this.txtSecondFormMisc, "Miscellaneous Notes");
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdmin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(19, 415);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 13;
+            this.btnAdmin.Text = "Admin";
+            this.toolTip1.SetToolTip(this.btnAdmin, "Update Application Password");
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -204,21 +220,6 @@
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Miscellaneous";
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdmin.BackColor = System.Drawing.Color.Green;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(19, 415);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdmin.TabIndex = 13;
-            this.btnAdmin.Text = "Admin";
-            this.toolTip1.SetToolTip(this.btnAdmin, "Update Application Password");
-            this.btnAdmin.UseVisualStyleBackColor = false;
             // 
             // SecondWindow
             // 
