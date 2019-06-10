@@ -40,6 +40,7 @@
             // 
             // txtForm1Password
             // 
+            this.txtForm1Password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtForm1Password.Location = new System.Drawing.Point(24, 134);
             this.txtForm1Password.Name = "txtForm1Password";
             this.txtForm1Password.Size = new System.Drawing.Size(242, 22);
@@ -50,6 +51,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
             this.pictureBox1.Location = new System.Drawing.Point(24, 26);
             this.pictureBox1.Name = "pictureBox1";
@@ -60,6 +62,7 @@
             // 
             // buttonForm1Submit
             // 
+            this.buttonForm1Submit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonForm1Submit.BackColor = System.Drawing.Color.Green;
             this.buttonForm1Submit.FlatAppearance.BorderSize = 0;
             this.buttonForm1Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -74,6 +77,7 @@
             // 
             // btnForm1Clear
             // 
+            this.btnForm1Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnForm1Clear.BackColor = System.Drawing.Color.Red;
             this.btnForm1Clear.FlatAppearance.BorderSize = 0;
             this.btnForm1Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

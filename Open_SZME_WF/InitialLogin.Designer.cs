@@ -40,8 +40,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(44, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -50,7 +51,8 @@
             // 
             // txtInitialPassword
             // 
-            this.txtInitialPassword.Location = new System.Drawing.Point(53, 144);
+            this.txtInitialPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtInitialPassword.Location = new System.Drawing.Point(85, 144);
             this.txtInitialPassword.Name = "txtInitialPassword";
             this.txtInitialPassword.Size = new System.Drawing.Size(166, 20);
             this.txtInitialPassword.TabIndex = 1;
@@ -59,9 +61,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 121);
+            this.label1.Location = new System.Drawing.Point(48, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 13);
             this.label1.TabIndex = 2;
@@ -69,11 +72,12 @@
             // 
             // btnInitialLoginCancel
             // 
+            this.btnInitialLoginCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnInitialLoginCancel.BackColor = System.Drawing.Color.Red;
             this.btnInitialLoginCancel.FlatAppearance.BorderSize = 0;
             this.btnInitialLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInitialLoginCancel.ForeColor = System.Drawing.Color.White;
-            this.btnInitialLoginCancel.Location = new System.Drawing.Point(90, 191);
+            this.btnInitialLoginCancel.Location = new System.Drawing.Point(122, 191);
             this.btnInitialLoginCancel.Name = "btnInitialLoginCancel";
             this.btnInitialLoginCancel.Size = new System.Drawing.Size(91, 23);
             this.btnInitialLoginCancel.TabIndex = 3;
@@ -86,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(266, 226);
+            this.ClientSize = new System.Drawing.Size(331, 226);
             this.Controls.Add(this.btnInitialLoginCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInitialPassword);

@@ -60,7 +60,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,7 +70,7 @@
             // txtAdminOldPassword
             // 
             this.txtAdminOldPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminOldPassword.Location = new System.Drawing.Point(45, 148);
+            this.txtAdminOldPassword.Location = new System.Drawing.Point(59, 148);
             this.txtAdminOldPassword.Name = "txtAdminOldPassword";
             this.txtAdminOldPassword.Size = new System.Drawing.Size(242, 20);
             this.txtAdminOldPassword.TabIndex = 1;
@@ -82,7 +82,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 129);
+            this.label1.Location = new System.Drawing.Point(59, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 2;
@@ -93,7 +93,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(45, 186);
+            this.label2.Location = new System.Drawing.Point(59, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 4;
@@ -102,7 +102,7 @@
             // txtAdminNewPassword1
             // 
             this.txtAdminNewPassword1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminNewPassword1.Location = new System.Drawing.Point(45, 205);
+            this.txtAdminNewPassword1.Location = new System.Drawing.Point(59, 205);
             this.txtAdminNewPassword1.Name = "txtAdminNewPassword1";
             this.txtAdminNewPassword1.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword1.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(45, 243);
+            this.label3.Location = new System.Drawing.Point(59, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 6;
@@ -123,7 +123,7 @@
             // txtAdminNewPassword2
             // 
             this.txtAdminNewPassword2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminNewPassword2.Location = new System.Drawing.Point(45, 262);
+            this.txtAdminNewPassword2.Location = new System.Drawing.Point(59, 262);
             this.txtAdminNewPassword2.Name = "txtAdminNewPassword2";
             this.txtAdminNewPassword2.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword2.TabIndex = 5;
@@ -137,7 +137,7 @@
             this.btnAdminSubmit.FlatAppearance.BorderSize = 0;
             this.btnAdminSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnAdminSubmit.Location = new System.Drawing.Point(212, 315);
+            this.btnAdminSubmit.Location = new System.Drawing.Point(226, 315);
             this.btnAdminSubmit.Name = "btnAdminSubmit";
             this.btnAdminSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnAdminSubmit.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.btnAdminStartOver.FlatAppearance.BorderSize = 0;
             this.btnAdminStartOver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminStartOver.ForeColor = System.Drawing.Color.White;
-            this.btnAdminStartOver.Location = new System.Drawing.Point(128, 315);
+            this.btnAdminStartOver.Location = new System.Drawing.Point(142, 315);
             this.btnAdminStartOver.Name = "btnAdminStartOver";
             this.btnAdminStartOver.Size = new System.Drawing.Size(75, 23);
             this.btnAdminStartOver.TabIndex = 8;
@@ -169,7 +169,7 @@
             this.btnAdminCancel.FlatAppearance.BorderSize = 0;
             this.btnAdminCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminCancel.ForeColor = System.Drawing.Color.White;
-            this.btnAdminCancel.Location = new System.Drawing.Point(45, 315);
+            this.btnAdminCancel.Location = new System.Drawing.Point(59, 315);
             this.btnAdminCancel.Name = "btnAdminCancel";
             this.btnAdminCancel.Size = new System.Drawing.Size(75, 23);
             this.btnAdminCancel.TabIndex = 9;
@@ -181,7 +181,7 @@
             // txtAdminRandomPassword
             // 
             this.txtAdminRandomPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminRandomPassword.Location = new System.Drawing.Point(45, 406);
+            this.txtAdminRandomPassword.Location = new System.Drawing.Point(59, 406);
             this.txtAdminRandomPassword.Name = "txtAdminRandomPassword";
             this.txtAdminRandomPassword.ReadOnly = true;
             this.txtAdminRandomPassword.Size = new System.Drawing.Size(242, 20);
@@ -191,7 +191,7 @@
             // numericAdminNumCharacters
             // 
             this.numericAdminNumCharacters.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericAdminNumCharacters.Location = new System.Drawing.Point(45, 483);
+            this.numericAdminNumCharacters.Location = new System.Drawing.Point(59, 483);
             this.numericAdminNumCharacters.Maximum = new decimal(new int[] {
             32,
             0,
@@ -217,7 +217,7 @@
             this.chkBxSpecialCharacter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkBxSpecialCharacter.AutoSize = true;
             this.chkBxSpecialCharacter.ForeColor = System.Drawing.Color.White;
-            this.chkBxSpecialCharacter.Location = new System.Drawing.Point(45, 516);
+            this.chkBxSpecialCharacter.Location = new System.Drawing.Point(59, 516);
             this.chkBxSpecialCharacter.Name = "chkBxSpecialCharacter";
             this.chkBxSpecialCharacter.Size = new System.Drawing.Size(153, 17);
             this.chkBxSpecialCharacter.TabIndex = 14;
@@ -232,7 +232,7 @@
             this.btnAdminGenerate.FlatAppearance.BorderSize = 0;
             this.btnAdminGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnAdminGenerate.Location = new System.Drawing.Point(212, 510);
+            this.btnAdminGenerate.Location = new System.Drawing.Point(226, 510);
             this.btnAdminGenerate.Name = "btnAdminGenerate";
             this.btnAdminGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnAdminGenerate.TabIndex = 15;
@@ -248,7 +248,7 @@
             this.btnAdminMax.FlatAppearance.BorderSize = 0;
             this.btnAdminMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminMax.ForeColor = System.Drawing.Color.White;
-            this.btnAdminMax.Location = new System.Drawing.Point(131, 483);
+            this.btnAdminMax.Location = new System.Drawing.Point(145, 483);
             this.btnAdminMax.Name = "btnAdminMax";
             this.btnAdminMax.Size = new System.Drawing.Size(37, 20);
             this.btnAdminMax.TabIndex = 18;
@@ -264,7 +264,7 @@
             this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
             this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
-            this.btnAdminRPGToClip.Location = new System.Drawing.Point(45, 429);
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(59, 429);
             this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
             this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
             this.btnAdminRPGToClip.TabIndex = 19;
@@ -280,7 +280,7 @@
             this.btnAdminClearClipboard.FlatAppearance.BorderSize = 0;
             this.btnAdminClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminClearClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnAdminClearClipboard.Location = new System.Drawing.Point(248, 429);
+            this.btnAdminClearClipboard.Location = new System.Drawing.Point(262, 429);
             this.btnAdminClearClipboard.Name = "btnAdminClearClipboard";
             this.btnAdminClearClipboard.Size = new System.Drawing.Size(39, 23);
             this.btnAdminClearClipboard.TabIndex = 20;
@@ -294,7 +294,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(45, 387);
+            this.label4.Location = new System.Drawing.Point(59, 387);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 13);
             this.label4.TabIndex = 11;
@@ -305,7 +305,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(45, 467);
+            this.label5.Location = new System.Drawing.Point(59, 467);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 13;
@@ -315,7 +315,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(4, 365);
+            this.label6.Location = new System.Drawing.Point(18, 365);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(326, 2);
             this.label6.TabIndex = 16;
@@ -326,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(330, 563);
+            this.ClientSize = new System.Drawing.Size(359, 563);
             this.Controls.Add(this.btnAdminClearClipboard);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.btnAdminMax);
