@@ -25,50 +25,47 @@ namespace Open_SZME_WF
             txtForm1Password.Focus();
         }
 
-        private void buttonForm1Submit_Click(object sender, EventArgs e)
+        private void Login()
         {
-            var pw = "";
-
-            //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
-
-            if (!string.IsNullOrEmpty(txtForm1Password.Text))
+            var pw = GetLoginPassword();
+            if (string.IsNullOrEmpty(txtForm1Password.Text))
             {
-                MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtForm1Password.Clear();
+                MessageBox.Show("Enter Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtForm1Password.Focus();
                 return;
             }
 
-            Hide();
-            SecondWindow sw = new SecondWindow();
-            sw.Show();
+            if (txtForm1Password.Text.Trim() == pw)
+            {
+                Hide();
+                SecondWindow sw = new SecondWindow();
+                sw.Show();
+            }
+            else
+            {
+                MessageBox.Show("Passwords Do Not Match", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtForm1Password.Clear();
+                txtForm1Password.Focus();
+            }
+        }
+
+        private void buttonForm1Submit_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void txtForm1Password_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                var pw = "";
-
-                //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
-                if (!string.IsNullOrEmpty(txtForm1Password.Text))
-                {
-                    MessageBox.Show("Incorrect Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtForm1Password.Clear();
-                    txtForm1Password.Focus();
-                    return;
-                }
-
-                Hide();
-                SecondWindow sw = new SecondWindow();
-                sw.Show();
+                Login();
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //CHANGE TO TRUE PRIOR TO PUBLISH
-            bool isInitialLogin = false;
+            bool isInitialLogin = true;
 
             while (isInitialLogin)
             {
@@ -115,6 +112,38 @@ namespace Open_SZME_WF
             }
 
             return ds;
+        }
+
+        public string GetLoginPassword()
+        {
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            string sql;
+
+            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "Select TOP 1 * from LoginTable ORDER BY LoginId Desc";
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "LoginTable");
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return ds.Tables[0].Rows[0]["LoginPassword"].ToString();
         }
     }
 }

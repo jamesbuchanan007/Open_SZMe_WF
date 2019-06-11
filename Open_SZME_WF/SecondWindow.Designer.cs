@@ -95,7 +95,7 @@
             this.txt2ndFormPassword.Name = "txt2ndFormPassword";
             this.txt2ndFormPassword.ReadOnly = true;
             this.txt2ndFormPassword.Size = new System.Drawing.Size(592, 38);
-            this.txt2ndFormPassword.TabIndex = 3;
+            this.txt2ndFormPassword.TabIndex = 26;
             this.toolTip1.SetToolTip(this.txt2ndFormPassword, "Current Password");
             // 
             // label2
@@ -180,7 +180,7 @@
             this.txt2ndFormUserId.Name = "txt2ndFormUserId";
             this.txt2ndFormUserId.ReadOnly = true;
             this.txt2ndFormUserId.Size = new System.Drawing.Size(592, 38);
-            this.txt2ndFormUserId.TabIndex = 9;
+            this.txt2ndFormUserId.TabIndex = 25;
             this.toolTip1.SetToolTip(this.txt2ndFormUserId, "Current User Id");
             // 
             // txt2ndFormMisc
@@ -191,7 +191,7 @@
             this.txt2ndFormMisc.Name = "txt2ndFormMisc";
             this.txt2ndFormMisc.ReadOnly = true;
             this.txt2ndFormMisc.Size = new System.Drawing.Size(854, 245);
-            this.txt2ndFormMisc.TabIndex = 11;
+            this.txt2ndFormMisc.TabIndex = 27;
             this.toolTip1.SetToolTip(this.txt2ndFormMisc, "Miscellaneous Notes");
             // 
             // btnAdmin
@@ -298,7 +298,7 @@
             this.btn2ndFormSubmit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
             this.btn2ndFormSubmit.Size = new System.Drawing.Size(200, 55);
-            this.btn2ndFormSubmit.TabIndex = 26;
+            this.btn2ndFormSubmit.TabIndex = 28;
             this.btn2ndFormSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btn2ndFormSubmit, "Add New Password Record");
             this.btn2ndFormSubmit.UseVisualStyleBackColor = false;

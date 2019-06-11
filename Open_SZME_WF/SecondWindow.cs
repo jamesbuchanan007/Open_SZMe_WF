@@ -19,11 +19,15 @@ namespace Open_SZME_WF
         public static int RecordIndex { get; set; }
         public static int RecordId { get; set; }
         public static Dictionary<int, RecordViewModel> RecordDictionary { get; set; }
+        public static Dictionary<int,string> ComboBoxDictionary { get; set; }
 
         public SecondWindow()
         {
             InitializeComponent();
             RecordIndex = 0;
+            RecordId = 0;
+            RecordDictionary = new Dictionary<int, RecordViewModel>();
+            ComboBoxDictionary = new Dictionary<int, string>();
 
             Reset();
             ReloadRecordAndComboBox();
@@ -31,6 +35,7 @@ namespace Open_SZME_WF
             if (cmb2ndFormProgramOrSite.Items.Count == 0)
             {
                 DisableAllButtons();
+                btn2ndFormNew.Enabled = true;
             }
 
         }
@@ -42,12 +47,12 @@ namespace Open_SZME_WF
             //LOAD COMBO DICTIONARY AND BIND
             for (int i = 0; i < RecordDictionary.Count; i++)
             {
-                cmb2ndFormProgramOrSite.Items.Add(RecordDictionary[i].Site);
+                ComboBoxDictionary.Add(i,RecordDictionary[i].Site);
             }
 
-            cmb2ndFormProgramOrSite.SelectedIndex = RecordIndex;
+            //cmb2ndFormProgramOrSite.SelectedIndex = RecordIndex+1;
 
-            cmb2ndFormProgramOrSite.DataSource = new BindingSource(RecordDictionary, null);
+            cmb2ndFormProgramOrSite.DataSource = new BindingSource(ComboBoxDictionary, null);
             cmb2ndFormProgramOrSite.ValueMember = "Key";
             cmb2ndFormProgramOrSite.DisplayMember = "Value";
 
@@ -60,6 +65,10 @@ namespace Open_SZME_WF
             //GET RECORD MATCHING SELECTED COMBO BOX
             var record = RecordDictionary.FirstOrDefault(x => x.Value.Site == cmb2ndFormProgramOrSite.SelectedText);
 
+            if (RecordDictionary.Count <= 1) { RecordId = 0;
+                return;
+            }
+
             //GET RECORD ID
             RecordId = record.Value.Id;
         }
@@ -70,7 +79,7 @@ namespace Open_SZME_WF
             var dsTable = dataSet.Tables[0];
             var count = dataSet.Tables[0].Rows.Count;
 
-            RecordIndex = count == 0 ? 1 : count;
+            RecordDictionary = new Dictionary<int, RecordViewModel>();
 
             for (int i = 0; i < count; i++)
             {
@@ -365,7 +374,7 @@ namespace Open_SZME_WF
                     {
                         connection.Open();
 
-                        sql = "INSERT INTO PasswordsTable (PasswordPassword,PasswordUserId,PasswordSite,PasswordMisc,IsEnabled) VALUES ('" + pw.Text.Trim() + "', " + userId.Text.Trim() + "','" + ps.Text.Trim() + "','" + misc + "',1)";
+                        sql = "INSERT INTO PasswordsTable (PasswordSite,PasswordPassword,PasswordUserId,PasswordMisc,IsEnabled) VALUES ('" + ps.Text.Trim() + "', '" + pw.Text.Trim() + "','" + userId.Text.Trim() + "','" + misc.Text + "',1)";
                         command = new SqlCommand(sql, connection);
                         command.Dispose();
                         connection.Close();
@@ -373,16 +382,17 @@ namespace Open_SZME_WF
                         MessageBox.Show("Password Added", "Open SZMe", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        Reset();
-
-                        ReloadRecordAndComboBox();
-
-                        return;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Cannot Open Connection", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    Reset();
+
+                    ReloadRecordAndComboBox();
+
+
+                    return;
                 }
 
                 if (btn2ndFormEdit.Enabled)
@@ -428,7 +438,8 @@ namespace Open_SZME_WF
         private void ReloadRecordAndComboBox()
         {
             var dataSet = GetPassword();
-            if(dataSet == null) return;
+
+            if (dataSet == null) return;
             LoadRecordDictionary(dataSet);
             LoadComboBoxDictionary();
 
@@ -464,7 +475,7 @@ namespace Open_SZME_WF
             {
                 connection.Open();
 
-                sql = "Select * from PasswordsTable Where IsEnabled = 1";
+                sql = "Select * From PasswordsTable Where IsEnabled = 1";
                 command = new SqlCommand(sql, connection);
                 adapter.SelectCommand = command;
                 adapter.Fill(ds, "PasswordsTable");
