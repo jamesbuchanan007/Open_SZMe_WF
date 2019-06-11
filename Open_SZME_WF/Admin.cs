@@ -43,7 +43,7 @@ namespace Open_SZME_WF
             var loginPwDataSet = GetPassword();
             if (loginPwDataSet.Tables[0].Rows.Count == 0) return;
 
-            var dbPw = loginPwDataSet.Tables[0].Rows[1]["LoginPassword"].ToString();
+            var dbPw = loginPwDataSet.Tables[0].Rows[0]["LoginPassword"].ToString();
 
             var oldPw = txtAdminOldPassword;
             var pw1 = txtAdminNewPassword1;

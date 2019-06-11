@@ -41,9 +41,9 @@
             // txtForm1Password
             // 
             this.txtForm1Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtForm1Password.Location = new System.Drawing.Point(24, 134);
+            this.txtForm1Password.Location = new System.Drawing.Point(129, 304);
             this.txtForm1Password.Name = "txtForm1Password";
-            this.txtForm1Password.Size = new System.Drawing.Size(242, 22);
+            this.txtForm1Password.Size = new System.Drawing.Size(572, 44);
             this.txtForm1Password.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtForm1Password, "Enter Password");
             this.txtForm1Password.UseSystemPasswordChar = true;
@@ -53,9 +53,9 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(94, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(645, 198);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -67,9 +67,9 @@
             this.buttonForm1Submit.FlatAppearance.BorderSize = 0;
             this.buttonForm1Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForm1Submit.ForeColor = System.Drawing.Color.White;
-            this.buttonForm1Submit.Location = new System.Drawing.Point(191, 194);
+            this.buttonForm1Submit.Location = new System.Drawing.Point(591, 434);
             this.buttonForm1Submit.Name = "buttonForm1Submit";
-            this.buttonForm1Submit.Size = new System.Drawing.Size(75, 23);
+            this.buttonForm1Submit.Size = new System.Drawing.Size(189, 65);
             this.buttonForm1Submit.TabIndex = 2;
             this.buttonForm1Submit.Text = "Submit";
             this.buttonForm1Submit.UseVisualStyleBackColor = false;
@@ -82,9 +82,9 @@
             this.btnForm1Clear.FlatAppearance.BorderSize = 0;
             this.btnForm1Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForm1Clear.ForeColor = System.Drawing.Color.White;
-            this.btnForm1Clear.Location = new System.Drawing.Point(24, 194);
+            this.btnForm1Clear.Location = new System.Drawing.Point(36, 434);
             this.btnForm1Clear.Name = "btnForm1Clear";
-            this.btnForm1Clear.Size = new System.Drawing.Size(75, 23);
+            this.btnForm1Clear.Size = new System.Drawing.Size(189, 65);
             this.btnForm1Clear.TabIndex = 3;
             this.btnForm1Clear.Text = "Clear";
             this.btnForm1Clear.UseVisualStyleBackColor = false;
@@ -92,10 +92,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(287, 247);
+            this.ClientSize = new System.Drawing.Size(822, 534);
             this.Controls.Add(this.btnForm1Clear);
             this.Controls.Add(this.buttonForm1Submit);
             this.Controls.Add(this.pictureBox1);
