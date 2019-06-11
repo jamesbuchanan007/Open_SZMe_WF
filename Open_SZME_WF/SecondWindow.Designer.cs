@@ -48,10 +48,10 @@
             this.btn2ndFormCancel = new System.Windows.Forms.Button();
             this.btn2ndFormStartOver = new System.Windows.Forms.Button();
             this.txt2ndFormProgramSite = new System.Windows.Forms.TextBox();
+            this.btn2ndFormSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn2ndFormSubmit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -185,7 +185,6 @@
             // 
             // txt2ndFormMisc
             // 
-            this.txt2ndFormMisc.Enabled = false;
             this.txt2ndFormMisc.Location = new System.Drawing.Point(114, 987);
             this.txt2ndFormMisc.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txt2ndFormMisc.Multiline = true;
@@ -283,9 +282,27 @@
             this.txt2ndFormProgramSite.Location = new System.Drawing.Point(376, 574);
             this.txt2ndFormProgramSite.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txt2ndFormProgramSite.Name = "txt2ndFormProgramSite";
+            this.txt2ndFormProgramSite.ReadOnly = true;
             this.txt2ndFormProgramSite.Size = new System.Drawing.Size(592, 38);
             this.txt2ndFormProgramSite.TabIndex = 24;
             this.toolTip1.SetToolTip(this.txt2ndFormProgramSite, "Current User Id");
+            // 
+            // btn2ndFormSubmit
+            // 
+            this.btn2ndFormSubmit.BackColor = System.Drawing.Color.Green;
+            this.btn2ndFormSubmit.Enabled = false;
+            this.btn2ndFormSubmit.FlatAppearance.BorderSize = 0;
+            this.btn2ndFormSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2ndFormSubmit.ForeColor = System.Drawing.Color.White;
+            this.btn2ndFormSubmit.Location = new System.Drawing.Point(768, 436);
+            this.btn2ndFormSubmit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
+            this.btn2ndFormSubmit.Size = new System.Drawing.Size(200, 55);
+            this.btn2ndFormSubmit.TabIndex = 26;
+            this.btn2ndFormSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btn2ndFormSubmit, "Add New Password Record");
+            this.btn2ndFormSubmit.UseVisualStyleBackColor = false;
+            this.btn2ndFormSubmit.Click += new System.EventHandler(this.btn2ndFormSubmit_Click);
             // 
             // label3
             // 
@@ -319,23 +336,6 @@
             this.label5.Size = new System.Drawing.Size(195, 32);
             this.label5.TabIndex = 25;
             this.label5.Text = "Program / Site";
-            // 
-            // btn2ndFormSubmit
-            // 
-            this.btn2ndFormSubmit.BackColor = System.Drawing.Color.Green;
-            this.btn2ndFormSubmit.Enabled = false;
-            this.btn2ndFormSubmit.FlatAppearance.BorderSize = 0;
-            this.btn2ndFormSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2ndFormSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormSubmit.Location = new System.Drawing.Point(768, 436);
-            this.btn2ndFormSubmit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
-            this.btn2ndFormSubmit.Size = new System.Drawing.Size(200, 55);
-            this.btn2ndFormSubmit.TabIndex = 26;
-            this.btn2ndFormSubmit.Text = "Submit";
-            this.toolTip1.SetToolTip(this.btn2ndFormSubmit, "Add New Password Record");
-            this.btn2ndFormSubmit.UseVisualStyleBackColor = false;
-            this.btn2ndFormSubmit.Click += new System.EventHandler(this.btn2ndFormSubmit_Click);
             // 
             // label6
             // 

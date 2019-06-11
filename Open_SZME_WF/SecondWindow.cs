@@ -41,8 +41,8 @@ namespace Open_SZME_WF
             RecordIndex = count == 0 ? 1 : count;
 
             Dictionary<int,RecordViewModel> recordDictionary = new Dictionary<int, RecordViewModel>();
-            //Dictionary<int,string> cmb2ndFormProgramOrSite = new Dictionary<int, string>();
 
+            //LOAD RECORD DICTIONARY MINUS EXPIRED RECORDS
             for (int i = 0; i < count; i++)
             {
                 RecordViewModel recordViewModel = new RecordViewModel()
@@ -60,6 +60,7 @@ namespace Open_SZME_WF
                 });
             }
 
+            //LOAD COMBO DICTIONARY AND BIND
             for (int i = 0; i < recordDictionary.Count; i++)
             {
                 cmb2ndFormProgramOrSite.Items.Add(recordDictionary[i].site);
@@ -70,6 +71,12 @@ namespace Open_SZME_WF
             cmb2ndFormProgramOrSite.DataSource = new BindingSource(recordDictionary, null);
             cmb2ndFormProgramOrSite.ValueMember = "Key";
             cmb2ndFormProgramOrSite.DisplayMember = "Value";
+
+            //GET RECORD MATCHING SELECTED COMBO BOX
+            var recordRecordId = recordDictionary.FirstOrDefault(x=>x.Value.site == cmb2ndFormProgramOrSite.SelectedText);
+
+            //GET RECORD ID
+            RecordId = recordRecordId.Value.id;
         }
 
         private void SecondWindow_Load(object sender, EventArgs e)
@@ -162,18 +169,18 @@ namespace Open_SZME_WF
 
         private void DisableAllTextBoxes()
         {
-            txt2ndFormProgramSite.Enabled = false;
-            txt2ndFormUserId.Enabled = false;
-            txt2ndFormPassword.Enabled = false;
-            txt2ndFormMisc.Enabled = false;
+            txt2ndFormProgramSite.ReadOnly = true;
+            txt2ndFormUserId.ReadOnly = true;
+            txt2ndFormPassword.ReadOnly = true;
+            txt2ndFormMisc.ReadOnly = true;
         }
 
         private void EnableAllTextBoxes()
         {
-            txt2ndFormProgramSite.Enabled = true;
-            txt2ndFormUserId.Enabled = true;
-            txt2ndFormPassword.Enabled = true;
-            txt2ndFormMisc.Enabled = true;
+            txt2ndFormProgramSite.ReadOnly = false;
+            txt2ndFormUserId.ReadOnly = false;
+            txt2ndFormPassword.ReadOnly = false;
+            txt2ndFormMisc.ReadOnly = false;
         }
 
         private void EnableStartOverCancelButtons()
