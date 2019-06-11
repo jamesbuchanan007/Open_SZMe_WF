@@ -43,6 +43,7 @@ namespace Open_SZME_WF
         private void LoadComboBoxDictionary()
         {
             if (RecordDictionary == null) return;
+            ComboBoxDictionary.Clear();
 
             //LOAD COMBO DICTIONARY AND BIND
             for (int i = 0; i < RecordDictionary.Count; i++)
@@ -57,6 +58,15 @@ namespace Open_SZME_WF
             cmb2ndFormProgramOrSite.DisplayMember = "Value";
 
             SetRecordId();
+            FillTextBoxes();
+        }
+
+        private void FillTextBoxes()
+        {
+            txt2ndFormProgramSite.Text = RecordDictionary[RecordIndex].Site;
+            txt2ndFormUserId.Text = RecordDictionary[RecordIndex].UserId;
+            txt2ndFormPassword.Text = RecordDictionary[RecordIndex].Password;
+            txt2ndFormMisc.Text = RecordDictionary[RecordIndex].Misc;
         }
 
         //SET RECORD ID
@@ -79,7 +89,7 @@ namespace Open_SZME_WF
             var dsTable = dataSet.Tables[0];
             var count = dataSet.Tables[0].Rows.Count;
 
-            RecordDictionary = new Dictionary<int, RecordViewModel>();
+            RecordDictionary.Clear();
 
             for (int i = 0; i < count; i++)
             {
