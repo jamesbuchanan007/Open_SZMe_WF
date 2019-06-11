@@ -41,6 +41,7 @@ namespace Open_SZME_WF
         private void btnAdminSubmit_Click(object sender, EventArgs e)
         {
             var loginPwDataSet = GetPassword();
+            if (loginPwDataSet.Tables[0].Rows.Count == 0) return;
 
             var dbPw = loginPwDataSet.Tables[0].Rows[1]["LoginPassword"].ToString();
 
@@ -92,8 +93,6 @@ namespace Open_SZME_WF
         {
             SqlConnection connection;
             SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet ds = new DataSet();
             string sql;
 
             var connectionString = Settings.Default.OpenSZMeDbConnectionString;
@@ -106,9 +105,6 @@ namespace Open_SZME_WF
 
                 sql = "Insert Into LoginTable (LoginPassword) Values ('" + newPw + "')";
                 command = new SqlCommand(sql, connection);
-                adapter.SelectCommand = command;
-                adapter.Fill(ds, "LoginTable");
-                adapter.Dispose();
                 command.Dispose();
                 connection.Close();
 

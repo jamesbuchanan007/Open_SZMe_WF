@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,10 +82,10 @@
     <Compile Include="InitialLogin.Designer.cs">
       <DependentUpon>InitialLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenSZMeDbDataSet.Designer.cs">
+    <Compile Include="OpenSZMeDbDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OpenSZMeDbDataSet.xsd</DependentUpon>
+      <DependentUpon>OpenSZMeDbDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,16 +117,16 @@
     <EmbeddedResource Include="SecondWindow.resx">
       <DependentUpon>SecondWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="OpenSZMeDbDataSet.xsc">
-      <DependentUpon>OpenSZMeDbDataSet.xsd</DependentUpon>
+    <None Include="OpenSZMeDbDataSet1.xsc">
+      <DependentUpon>OpenSZMeDbDataSet1.xsd</DependentUpon>
     </None>
-    <Content Include="OpenSZMeDbDataSet.xsd">
+    <None Include="OpenSZMeDbDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OpenSZMeDbDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>OpenSZMeDbDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </Content>
-    <None Include="OpenSZMeDbDataSet.xss">
-      <DependentUpon>OpenSZMeDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OpenSZMeDbDataSet1.xss">
+      <DependentUpon>OpenSZMeDbDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,13 +157,6 @@
     <Resource Include="Resources\Icon_Win.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OpenSZMeDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="OpenSZMeDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>OpenSZMeDb.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\vault_image_vI1_icon.ico" />
     <None Include="Resources\vault_image_CG7_icon.ico" />
     <None Include="Resources\Vault_Image.png" />
@@ -180,6 +173,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OpenSZMeDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenSZMeDb_log.ldf">
+      <DependentUpon>OpenSZMeDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
