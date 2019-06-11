@@ -64,8 +64,9 @@ namespace Open_SZME_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //CHANGE TO TRUE PRIOR TO PUBLISH
-            bool isInitialLogin = true;
+            var ds = GetPassword();
+
+            var isInitialLogin = ds.Tables[0].Rows.Count == 0;
 
             while (isInitialLogin)
             {
@@ -79,6 +80,7 @@ namespace Open_SZME_WF
                 password = GetPassword();
                 if (password.Tables[0].Rows.Count > 0) isInitialLogin = false;
             }
+
             Show();
         }
 
