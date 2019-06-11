@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,66 +18,80 @@ namespace Open_SZME_WF
     {
         public static int RecordIndex { get; set; }
         public static int RecordId { get; set; }
+        public static Dictionary<int, RecordViewModel> RecordDictionary { get; set; }
 
         public SecondWindow()
         {
             InitializeComponent();
-
-            cmb2ndFormProgramOrSite.Enabled = true;
-
-            DisableAllButtons();
-            DisableClipboardButtons();
-            DisableStartOverCancelButtons();
-            DisableAllTextBoxes();
-
-            btn2ndFormNew.Enabled = true;
-            btn2ndFormEdit.Enabled = true;
-            btn2ndFormDelete.Enabled = true;
-
             RecordIndex = 0;
 
-            var dataSet = GetPassword();
+            Reset();
+            ReloadRecordAndComboBox();
+
+            if (cmb2ndFormProgramOrSite.Items.Count == 0)
+            {
+                DisableAllButtons();
+            }
+
+        }
+        //LOAD COMBOBOX, BIND, AND SET RECORD ID
+        private void LoadComboBoxDictionary()
+        {
+            if (RecordDictionary == null) return;
+
+            //LOAD COMBO DICTIONARY AND BIND
+            for (int i = 0; i < RecordDictionary.Count; i++)
+            {
+                cmb2ndFormProgramOrSite.Items.Add(RecordDictionary[i].Site);
+            }
+
+            cmb2ndFormProgramOrSite.SelectedIndex = RecordIndex;
+
+            cmb2ndFormProgramOrSite.DataSource = new BindingSource(RecordDictionary, null);
+            cmb2ndFormProgramOrSite.ValueMember = "Key";
+            cmb2ndFormProgramOrSite.DisplayMember = "Value";
+
+            SetRecordId();
+        }
+
+        //SET RECORD ID
+        private void SetRecordId()
+        {
+            //GET RECORD MATCHING SELECTED COMBO BOX
+            var record = RecordDictionary.FirstOrDefault(x => x.Value.Site == cmb2ndFormProgramOrSite.SelectedText);
+
+            //GET RECORD ID
+            RecordId = record.Value.Id;
+        }
+
+        //LOAD RECORD DICTIONARY MINUS EXPIRED RECORDS
+        public void LoadRecordDictionary(DataSet dataSet)
+        {
             var dsTable = dataSet.Tables[0];
             var count = dataSet.Tables[0].Rows.Count;
+
             RecordIndex = count == 0 ? 1 : count;
 
-            Dictionary<int,RecordViewModel> recordDictionary = new Dictionary<int, RecordViewModel>();
-
-            //LOAD RECORD DICTIONARY MINUS EXPIRED RECORDS
             for (int i = 0; i < count; i++)
             {
                 RecordViewModel recordViewModel = new RecordViewModel()
                 {
-                    id = (int)dsTable.Rows[i]["PasswordId"],
-                    password = dsTable.Rows[i]["PasswordPassword"].ToString(),
-                    userId = dsTable.Rows[i]["PasswordUserId"].ToString(),
-                    site = dsTable.Rows[i]["PasswordSite"].ToString(),
-                    misc = dsTable.Rows[i]["PasswordMisc"].ToString()
+                    Id = (int)dsTable.Rows[i]["PasswordId"],
+                    Password = dsTable.Rows[i]["PasswordPassword"].ToString(),
+                    UserId = dsTable.Rows[i]["PasswordUserId"].ToString(),
+                    Site = dsTable.Rows[i]["PasswordSite"].ToString(),
+                    Misc = dsTable.Rows[i]["PasswordMisc"].ToString()
                 };
 
-                recordDictionary.Add(i, new RecordViewModel
-                {id = recordViewModel.id, password = recordViewModel.password, userId = recordViewModel.userId, site = recordViewModel.site,
-                    misc = recordViewModel.misc
+                RecordDictionary.Add(i, new RecordViewModel
+                {
+                    Id = recordViewModel.Id,
+                    Password = recordViewModel.Password,
+                    UserId = recordViewModel.UserId,
+                    Site = recordViewModel.Site,
+                    Misc = recordViewModel.Misc
                 });
             }
-
-            //LOAD COMBO DICTIONARY AND BIND
-            for (int i = 0; i < recordDictionary.Count; i++)
-            {
-                cmb2ndFormProgramOrSite.Items.Add(recordDictionary[i].site);
-            }
-            
-            cmb2ndFormProgramOrSite.SelectedIndex = RecordIndex;
-
-            cmb2ndFormProgramOrSite.DataSource = new BindingSource(recordDictionary, null);
-            cmb2ndFormProgramOrSite.ValueMember = "Key";
-            cmb2ndFormProgramOrSite.DisplayMember = "Value";
-
-            //GET RECORD MATCHING SELECTED COMBO BOX
-            var recordRecordId = recordDictionary.FirstOrDefault(x=>x.Value.site == cmb2ndFormProgramOrSite.SelectedText);
-
-            //GET RECORD ID
-            RecordId = recordRecordId.Value.id;
         }
 
         private void SecondWindow_Load(object sender, EventArgs e)
@@ -216,15 +231,21 @@ namespace Open_SZME_WF
 
         private void btn2ndFormEdit_Click(object sender, EventArgs e)
         {
-            cmb2ndFormProgramOrSite.Enabled = false;
+            DialogResult result = MessageBox.Show("Edit Password Record?", "Open SZMe", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                cmb2ndFormProgramOrSite.Enabled = false;
 
-            EnableAllButtons();
-            EnableAllTextBoxes();
-            EnableClipboardButtons();
-            EnableStartOverCancelButtons();
+                EnableAllButtons();
+                EnableAllTextBoxes();
+                EnableClipboardButtons();
+                EnableStartOverCancelButtons();
 
-            btn2ndFormNew.Enabled = false;
-            btn2ndFormDelete.Enabled = false;
+                btn2ndFormNew.Enabled = false;
+                btn2ndFormDelete.Enabled = false;
+            }
+
         }
 
         private void btn2ndFormCancel_Click(object sender, EventArgs e)
@@ -234,11 +255,7 @@ namespace Open_SZME_WF
 
             if (result == DialogResult.Yes)
             {
-                DisableAllButtons();
-                DisableAllTextBoxes();
-                btn2ndFormNew.Enabled = true;
-                btn2ndFormEdit.Enabled = true;
-                btn2ndFormDelete.Enabled = true;
+                Reset();
             }
         }
 
@@ -249,16 +266,45 @@ namespace Open_SZME_WF
 
             if (result == DialogResult.Yes)
             {
-                cmb2ndFormProgramOrSite.Enabled = false;
-                DisableAllButtons();
-                DisableStartOverCancelButtons();
-                DisableClipboardButtons();
+                DeleteRecord();
+                Reset();
+                ReloadRecordAndComboBox();
             }
         }
 
-        private void DeleteRecord(int index)
+        private void DeleteRecord()
         {
-            var passwordId = index;
+            SqlConnection connection;
+            SqlCommand command;
+            string sql;
+
+            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "UPDATE PasswordsTable SET IsEnabled = 0 WHERE PasswordId = " + RecordId;
+                command = new SqlCommand(sql, connection);
+                command.Dispose();
+                connection.Close();
+
+                MessageBox.Show("Password Record Expired", "Open SZMe", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                var dataSet = GetPassword();
+
+                if (dataSet == null) return;
+
+                LoadRecordDictionary(dataSet);
+                LoadComboBoxDictionary();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Open Connection", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn2ndFormSubmit_Click(object sender, EventArgs e)
@@ -319,7 +365,7 @@ namespace Open_SZME_WF
                     {
                         connection.Open();
 
-                        sql = "INSERT INTO PasswordsTable (PasswordPassword,PasswordUserId,PasswordSite,PasswordMisc,IsEnabled) VALUES ('" + pw.Text.Trim() + "', " + userId.Text.Trim() + "','" + ps.Text.Trim() + "','" + misc + "',true)";
+                        sql = "INSERT INTO PasswordsTable (PasswordPassword,PasswordUserId,PasswordSite,PasswordMisc,IsEnabled) VALUES ('" + pw.Text.Trim() + "', " + userId.Text.Trim() + "','" + ps.Text.Trim() + "','" + misc + "',1)";
                         command = new SqlCommand(sql, connection);
                         command.Dispose();
                         connection.Close();
@@ -327,16 +373,9 @@ namespace Open_SZME_WF
                         MessageBox.Show("Password Added", "Open SZMe", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        DisableAllButtons();
-                        DisableAllTextBoxes();
-                        DisableClipboardButtons();
-                        DisableStartOverCancelButtons();
+                        Reset();
 
-                        btn2ndFormNew.Enabled = true;
-                        btn2ndFormEdit.Enabled = true;
-                        btn2ndFormDelete.Enabled = true;
-
-                        cmb2ndFormProgramOrSite.Focus();
+                        ReloadRecordAndComboBox();
 
                         return;
                     }
@@ -360,7 +399,7 @@ namespace Open_SZME_WF
                     {
                         connection.Open();
 
-                        sql = "UPDATE PasswordsTable SET PasswordPassword = '" + pw.Text.Trim() + "', PasswordUserId = '"+ userId.Text.Trim() + "', PasswordSite = '"+ps.Text.Trim() + "', PasswordMisc = '"+misc.Text.Trim() + "', IsEnabled = True WHERE PasswordId = " + RecordIndex;
+                        sql = "UPDATE PasswordsTable SET PasswordPassword = '" + pw.Text.Trim() + "', PasswordUserId = '" + userId.Text.Trim() + "', PasswordSite = '" + ps.Text.Trim() + "', PasswordMisc = '" + misc.Text.Trim() + "', IsEnabled = 1 WHERE PasswordId = " + RecordId;
                         command = new SqlCommand(sql, connection);
                         command.Dispose();
                         connection.Close();
@@ -368,24 +407,46 @@ namespace Open_SZME_WF
                         MessageBox.Show("Password Updated", "Open SZMe", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        DisableAllButtons();
-                        DisableAllTextBoxes();
-                        DisableClipboardButtons();
-                        DisableStartOverCancelButtons();
+                        Reset();
 
-                        btn2ndFormNew.Enabled = true;
-                        btn2ndFormEdit.Enabled = true;
-                        btn2ndFormDelete.Enabled = true;
+                        ReloadRecordAndComboBox();
 
-                        cmb2ndFormProgramOrSite.Focus();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Cannot Open Connection!!","Open SZMe",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Cannot Open Connection!!", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+            else
+            {
+                Reset();
+            }
 
+        }
+
+        private void ReloadRecordAndComboBox()
+        {
+            var dataSet = GetPassword();
+            if(dataSet == null) return;
+            LoadRecordDictionary(dataSet);
+            LoadComboBoxDictionary();
+
+        }
+
+        private void Reset()
+        {
+            cmb2ndFormProgramOrSite.Enabled = true;
+            cmb2ndFormProgramOrSite.Focus();
+
+            DisableAllButtons();
+            DisableAllTextBoxes();
+            DisableClipboardButtons();
+            DisableStartOverCancelButtons();
+
+            btn2ndFormNew.Enabled = true;
+            btn2ndFormEdit.Enabled = true;
+            btn2ndFormDelete.Enabled = true;
         }
         public DataSet GetPassword()
         {
@@ -403,7 +464,7 @@ namespace Open_SZME_WF
             {
                 connection.Open();
 
-                sql = "Select * from PasswordsTable Where IsEnable = true";
+                sql = "Select * from PasswordsTable Where IsEnabled = 1";
                 command = new SqlCommand(sql, connection);
                 adapter.SelectCommand = command;
                 adapter.Fill(ds, "PasswordsTable");
@@ -422,10 +483,10 @@ namespace Open_SZME_WF
 
     public class RecordViewModel
     {
-        public int id { get; set; }
-        public string password { get; set; }
-        public string userId { get; set; }
-        public string site { get; set; }
-        public string misc { get; set; }
+        public int Id { get; set; }
+        public string Password { get; set; }
+        public string UserId { get; set; }
+        public string Site { get; set; }
+        public string Misc { get; set; }
     }
 }

@@ -195,6 +195,8 @@ namespace Open_SZME_WF
 
         private void btnAdminRPGToClip_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtAdminRandomPassword.Text)) return;
+
             Clipboard.SetText(txtAdminRandomPassword.Text);
             Hide();
         }

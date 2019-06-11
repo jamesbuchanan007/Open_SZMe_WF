@@ -48,7 +48,7 @@ namespace Open_SZME_WF
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                var pw = "prism";
+                var pw = "";
 
                 //FOR NOW, PASSWORD WILL BE PRISM.  ONCE DB IS UP, THEN IF PW IN DB IS NULL, THEN PROMPT FOR NEW PASSWORD.
                 if (!string.IsNullOrEmpty(txtForm1Password.Text))

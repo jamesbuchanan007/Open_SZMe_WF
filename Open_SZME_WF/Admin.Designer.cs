@@ -245,7 +245,7 @@
             this.btnAdminGenerate.FlatAppearance.BorderSize = 0;
             this.btnAdminGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnAdminGenerate.Location = new System.Drawing.Point(603, 1199);
+            this.btnAdminGenerate.Location = new System.Drawing.Point(603, 1195);
             this.btnAdminGenerate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAdminGenerate.Name = "btnAdminGenerate";
             this.btnAdminGenerate.Size = new System.Drawing.Size(200, 55);
@@ -262,7 +262,7 @@
             this.btnAdminMax.FlatAppearance.BorderSize = 0;
             this.btnAdminMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminMax.ForeColor = System.Drawing.Color.White;
-            this.btnAdminMax.Location = new System.Drawing.Point(387, 1135);
+            this.btnAdminMax.Location = new System.Drawing.Point(387, 1131);
             this.btnAdminMax.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnAdminMax.Name = "btnAdminMax";
             this.btnAdminMax.Size = new System.Drawing.Size(99, 48);
@@ -345,7 +345,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(957, 1335);
+            this.ClientSize = new System.Drawing.Size(957, 1337);
             this.Controls.Add(this.btnAdminClearClipboard);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.btnAdminMax);
