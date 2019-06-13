@@ -40,11 +40,6 @@ namespace Open_SZME_WF
 
         private void btnAdminSubmit_Click(object sender, EventArgs e)
         {
-            var loginPwDataSet = GetPassword();
-            if (loginPwDataSet.Tables[0].Rows.Count == 0) return;
-
-            var dbPw = loginPwDataSet.Tables[0].Rows[0]["LoginPassword"].ToString();
-
             var oldPw = txtAdminOldPassword;
             var pw1 = txtAdminNewPassword1;
             var pw2 = txtAdminNewPassword2;
@@ -53,34 +48,44 @@ namespace Open_SZME_WF
             {
                 MessageBox.Show("Enter Old Password", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 oldPw.Focus();
+                return;
             }
             if (string.IsNullOrEmpty(pw1.Text))
             {
                 MessageBox.Show("Enter New Password 1", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 pw1.Focus();
-            }
+                return;
+                }
             if (string.IsNullOrEmpty(pw2.Text))
             {
                 MessageBox.Show("Enter New Password 2", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 pw2.Focus();
+                return;
             }
+
+            var loginPwDataSet = GetPassword();
+            if (loginPwDataSet.Tables[0].Rows.Count == 0) return;
+
+            var dbPw = loginPwDataSet.Tables[0].Rows[0]["LoginPassword"].ToString();
 
             if (oldPw.Text.Trim() != dbPw)
             {
-                MessageBox.Show("Old Password Does Not Match!!", "Open SZMe", MessageBoxButtons.OK,
+                MessageBox.Show("Old Password Does Not Match", "Open SZMe", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 oldPw.Clear();
                 oldPw.Focus();
+                return;
             }
 
             if (pw1.Text.Trim() != pw2.Text.Trim())
             {
-                MessageBox.Show("New Password 1 Does Not Match New Password 2!!", "Open SZMe", MessageBoxButtons.OK,
+                MessageBox.Show("New Password Does Not Match Confirmed Password!", "Open SZMe", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
 
                 pw1.Clear();
                 pw2.Clear();
                 pw1.Focus();
+                return;
             }
 
             if (oldPw.Text == dbPw && pw1.Text.Trim() == pw2.Text.Trim())
@@ -105,10 +110,12 @@ namespace Open_SZME_WF
 
                 sql = "Insert Into LoginTable (LoginPassword) Values ('" + newPw + "')";
                 command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
                 command.Dispose();
                 connection.Close();
 
                 MessageBox.Show("Password Updated", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Hide();
             }
             catch (Exception ex)
             {
@@ -132,7 +139,7 @@ namespace Open_SZME_WF
             {
                 connection.Open();
 
-                sql = "Select TOP 1 * from LoginTable ORDER BY LoginTableId Desc";
+                sql = "Select TOP 1 * from LoginTable ORDER BY LoginId Desc";
                 command = new SqlCommand(sql, connection);
                 adapter.SelectCommand = command;
                 adapter.Fill(ds, "LoginTable");

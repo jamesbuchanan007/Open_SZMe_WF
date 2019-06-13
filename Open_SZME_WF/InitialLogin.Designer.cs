@@ -42,9 +42,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(44, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(117, 29);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(645, 198);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -52,11 +53,12 @@
             // txtInitialPassword
             // 
             this.txtInitialPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtInitialPassword.Location = new System.Drawing.Point(85, 144);
+            this.txtInitialPassword.Location = new System.Drawing.Point(227, 343);
+            this.txtInitialPassword.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtInitialPassword.Name = "txtInitialPassword";
-            this.txtInitialPassword.Size = new System.Drawing.Size(166, 20);
+            this.txtInitialPassword.Size = new System.Drawing.Size(436, 38);
             this.txtInitialPassword.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtInitialPassword, "Enter Initial Password");
+            this.toolTip1.SetToolTip(this.txtInitialPassword, "Enter Initial Password then press Enter");
             this.txtInitialPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialPassword_KeyPress);
             // 
             // label1
@@ -64,9 +66,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 121);
+            this.label1.Location = new System.Drawing.Point(128, 289);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 13);
+            this.label1.Size = new System.Drawing.Size(633, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Password for Initial Use (Min. 5 Characters)";
             // 
@@ -77,9 +80,10 @@
             this.btnInitialLoginCancel.FlatAppearance.BorderSize = 0;
             this.btnInitialLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInitialLoginCancel.ForeColor = System.Drawing.Color.White;
-            this.btnInitialLoginCancel.Location = new System.Drawing.Point(122, 191);
+            this.btnInitialLoginCancel.Location = new System.Drawing.Point(325, 455);
+            this.btnInitialLoginCancel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnInitialLoginCancel.Name = "btnInitialLoginCancel";
-            this.btnInitialLoginCancel.Size = new System.Drawing.Size(91, 23);
+            this.btnInitialLoginCancel.Size = new System.Drawing.Size(243, 55);
             this.btnInitialLoginCancel.TabIndex = 3;
             this.btnInitialLoginCancel.Text = "Cancel Set Up";
             this.btnInitialLoginCancel.UseVisualStyleBackColor = false;
@@ -87,15 +91,16 @@
             // 
             // InitialLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(331, 226);
+            this.ClientSize = new System.Drawing.Size(883, 539);
             this.Controls.Add(this.btnInitialLoginCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInitialPassword);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "InitialLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe - Initial Login";

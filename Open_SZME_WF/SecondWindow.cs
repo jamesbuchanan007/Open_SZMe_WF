@@ -258,7 +258,7 @@ namespace Open_SZME_WF
             RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
             var record = RecordDictionary.ElementAt(RecordIndex);
             var value = record.Value;
-            var question = "Edit Password Record for " + value.Site + "?";
+            var question = "Edit Password Record for '" + value.Site + "'?";
 
             DialogResult result = MessageBox.Show(question, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -294,7 +294,7 @@ namespace Open_SZME_WF
             RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
             var record = RecordDictionary.ElementAt(RecordIndex);
             var value = record.Value;
-            var question = "Delete Password Record for " + value.Site + "?";
+            var question = "Delete Password Record for '" + value.Site + "'?";
 
             DialogResult result = MessageBox.Show(question, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -379,7 +379,7 @@ namespace Open_SZME_WF
             if (btn2ndFormNew.Enabled)
             {
                 //NEED TO MVOE THIS INSIDE 'ADD NEW RECORD'
-                var questionSave = "Save Password for " + ps.Text + "?";
+                var questionSave = "Save Password for '" + ps.Text + "'?";
 
                 DialogResult submitResult = MessageBox.Show(questionSave, "Open SZMe", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
@@ -445,7 +445,13 @@ namespace Open_SZME_WF
                 {
                     connection.Open();
 
-                    sql = "UPDATE PasswordsTable SET PasswordPassword = '" + pw.Text.Trim() + "', PasswordUserId = '" + userId.Text.Trim() + "', PasswordSite = '" + ps.Text.Trim() + "', PasswordMisc = '" + misc.Text.Trim() + "', IsEnabled = 1 WHERE PasswordId = " + RecordId;
+                    sql = "UPDATE PasswordsTable SET " +
+                          "PasswordPassword = '" + pw.Text.Trim() + "', " +
+                          "PasswordUserId = '" + userId.Text.Trim() + "', " +
+                          "PasswordSite = '" + ps.Text.Trim() + "', " +
+                          "PasswordMisc = '" + misc.Text.Trim() + "', " +
+                          "IsEnabled = 1 " +
+                          "WHERE PasswordId = " + RecordId;
                     command = new SqlCommand(sql, connection);
                     command.ExecuteNonQuery();
                     command.Dispose();
