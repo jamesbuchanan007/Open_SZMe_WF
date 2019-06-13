@@ -401,6 +401,7 @@ namespace Open_SZME_WF
                               userId.Text.Trim() + "','" + 
                               misc.Text + "',1)";
                         command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
                         command.Dispose();
                         connection.Close();
 
