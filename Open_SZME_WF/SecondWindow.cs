@@ -72,10 +72,15 @@ namespace Open_SZME_WF
         //SET RECORD ID
         private void SetRecordId()
         {
-            //GET RECORD MATCHING SELECTED COMBO BOX
-            var record = RecordDictionary.FirstOrDefault(x => x.Value.Site == cmb2ndFormProgramOrSite.SelectedText);
+            //GET INDEX FOR COMBOBOX
+            var comboBoxIndex = cmb2ndFormProgramOrSite.SelectedIndex;
 
-            if (RecordDictionary.Count <= 1) { RecordId = 0;
+            //GET RECORD MATCHING SELECTED COMBO BOX INDEX
+            var record = RecordDictionary.ElementAt(comboBoxIndex);
+
+            if (RecordDictionary.Count <= 1)
+            {
+                RecordId = 0;
                 return;
             }
 
@@ -384,7 +389,17 @@ namespace Open_SZME_WF
                     {
                         connection.Open();
 
-                        sql = "INSERT INTO PasswordsTable (PasswordSite,PasswordPassword,PasswordUserId,PasswordMisc,IsEnabled) VALUES ('" + ps.Text.Trim() + "', '" + pw.Text.Trim() + "','" + userId.Text.Trim() + "','" + misc.Text + "',1)";
+                        sql = "INSERT INTO PasswordsTable " +
+                              "(PasswordSite," +
+                              "PasswordPassword," +
+                              "PasswordUserId," +
+                              "PasswordMisc," +
+                              "IsEnabled) " +
+                              "VALUES ('" + 
+                              ps.Text.Trim() + "', '" + 
+                              pw.Text.Trim() + "','" + 
+                              userId.Text.Trim() + "','" + 
+                              misc.Text + "',1)";
                         command = new SqlCommand(sql, connection);
                         command.Dispose();
                         connection.Close();
