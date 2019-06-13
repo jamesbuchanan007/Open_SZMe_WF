@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using Open_SZME_WF.Properties;
 
 namespace Open_SZME_WF
@@ -180,7 +174,14 @@ namespace Open_SZME_WF
 
         private void btn2ndFormStartOver_Click(object sender, EventArgs e)
         {
-            txt2ndFormPassword.Clear();
+            DialogResult result = MessageBox.Show("Clear Form?", "Open SZMe", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                txt2ndFormPassword.Clear();
+            }
+
+            txt2ndFormProgramSite.Focus();
         }
 
         private void DisableAllButtons()
@@ -258,7 +259,7 @@ namespace Open_SZME_WF
             RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
             var record = RecordDictionary.ElementAt(RecordIndex);
             var value = record.Value;
-            var question = "Edit Password Record for '" + value.Site + "'?";
+            var question = "Edit Record for '" + value.Site + "'?";
 
             DialogResult result = MessageBox.Show(question, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -294,7 +295,7 @@ namespace Open_SZME_WF
             RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
             var record = RecordDictionary.ElementAt(RecordIndex);
             var value = record.Value;
-            var question = "Delete Password Record for '" + value.Site + "'?";
+            var question = "Delete Record for '" + value.Site + "'?";
 
             DialogResult result = MessageBox.Show(question, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -379,7 +380,7 @@ namespace Open_SZME_WF
             if (btn2ndFormNew.Enabled)
             {
                 //NEED TO MVOE THIS INSIDE 'ADD NEW RECORD'
-                var questionSave = "Save Password for '" + ps.Text + "'?";
+                var questionSave = "Save Record for '" + ps.Text + "'?";
 
                 DialogResult submitResult = MessageBox.Show(questionSave, "Open SZMe", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
