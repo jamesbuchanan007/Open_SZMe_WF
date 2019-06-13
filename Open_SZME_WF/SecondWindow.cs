@@ -285,7 +285,12 @@ namespace Open_SZME_WF
 
         private void btn2ndFormDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Delete Password Record?", "Open SZMe", MessageBoxButtons.YesNo,
+            RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
+            var record = RecordDictionary.ElementAt(RecordIndex);
+            var value = record.Value;
+            var question = "Delete Password Record for " + value.Site + "?";
+
+            DialogResult result = MessageBox.Show(question, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
@@ -312,18 +317,13 @@ namespace Open_SZME_WF
 
                 sql = "UPDATE PasswordsTable SET IsEnabled = 0 WHERE PasswordId = " + RecordId;
                 command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
                 command.Dispose();
                 connection.Close();
 
                 MessageBox.Show("Password Record Expired", "Open SZMe", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-
-                var dataSet = GetPassword();
-
-                if (dataSet == null) return;
-
-                LoadRecordDictionary(dataSet);
-                LoadComboBoxDictionary();
+               
             }
             catch (Exception ex)
             {
@@ -360,7 +360,7 @@ namespace Open_SZME_WF
 
             if (pw.Text.Length < 5)
             {
-                DialogResult result = MessageBox.Show("Is Passsword supposed to be less than 5 characters?", "Open SZMe", MessageBoxButtons.YesNo,
+                DialogResult result = MessageBox.Show("Is Password supposed to be less than 5 characters?", "Open SZMe", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (result == DialogResult.No)
@@ -369,7 +369,10 @@ namespace Open_SZME_WF
                 }
             }
 
-            DialogResult submitResult = MessageBox.Show("Save Password Record?", "Open SZMe", MessageBoxButtons.YesNo,
+            //NEED TO MVOE THIS INSIDE 'ADD NEW RECORD'
+            var questionSave = "Save Password for " + ps.Text + "?";
+
+            DialogResult submitResult = MessageBox.Show(questionSave, "Open SZMe", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (submitResult == DialogResult.Yes)
@@ -407,7 +410,7 @@ namespace Open_SZME_WF
 
                         MessageBox.Show("Password Added", "Open SZMe", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-
+                        
                     }
                     catch (Exception ex)
                     {
@@ -416,7 +419,7 @@ namespace Open_SZME_WF
                     Reset();
 
                     ReloadRecordAndComboBox();
-
+                    cmb2ndFormProgramOrSite.SelectedIndex =  ComboBoxDictionary.Count - 1;
 
                     return;
                 }
@@ -527,6 +530,8 @@ namespace Open_SZME_WF
             txt2ndFormUserId.Text = value.UserId;
             txt2ndFormPassword.Text = value.Password;
             txt2ndFormMisc.Text = value.Misc;
+
+            RecordId = value.Id;
         }
     }
 
