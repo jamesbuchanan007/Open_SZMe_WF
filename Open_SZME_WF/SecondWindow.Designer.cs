@@ -68,6 +68,8 @@
             // 
             // cmb2ndFormProgramOrSite
             // 
+            this.cmb2ndFormProgramOrSite.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb2ndFormProgramOrSite.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb2ndFormProgramOrSite.FormattingEnabled = true;
             this.cmb2ndFormProgramOrSite.Location = new System.Drawing.Point(140, 127);
             this.cmb2ndFormProgramOrSite.Name = "cmb2ndFormProgramOrSite";

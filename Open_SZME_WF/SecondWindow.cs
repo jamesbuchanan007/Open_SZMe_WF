@@ -519,6 +519,7 @@ namespace Open_SZME_WF
 
         private void cmb2ndFormProgramOrSite_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
             var record = RecordDictionary.ElementAt(RecordIndex);
             var value = record.Value;
 
