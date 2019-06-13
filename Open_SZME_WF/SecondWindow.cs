@@ -516,6 +516,17 @@ namespace Open_SZME_WF
 
             return ds;
         }
+
+        private void cmb2ndFormProgramOrSite_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var record = RecordDictionary.ElementAt(RecordIndex);
+            var value = record.Value;
+
+            txt2ndFormProgramSite.Text = value.Site;
+            txt2ndFormUserId.Text = value.UserId;
+            txt2ndFormPassword.Text = value.Password;
+            txt2ndFormMisc.Text = value.Misc;
+        }
     }
 
     public class RecordViewModel
