@@ -93,6 +93,7 @@
             // 
             // labelVersion
             // 
+            this.labelVersion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelVersion.AutoSize = true;
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
             this.labelVersion.Location = new System.Drawing.Point(12, 4);
