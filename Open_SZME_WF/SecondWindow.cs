@@ -553,7 +553,7 @@ namespace Open_SZME_WF
 
         private void btnCopyUserId_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt2ndFormUserId.Text) { Clipboard.SetText(txt2ndFormUserId.Text); }
+            if (!string.IsNullOrEmpty(txt2ndFormUserId.Text)) { Clipboard.SetText(txt2ndFormUserId.Text); }
         }
 
         private void btnPasteUserId_Click(object sender, EventArgs e)
