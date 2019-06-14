@@ -59,7 +59,7 @@
             this.txtInitialPassword.Name = "txtInitialPassword";
             this.txtInitialPassword.Size = new System.Drawing.Size(436, 38);
             this.txtInitialPassword.TabIndex = 1;
-            this.txtInitialPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInitialPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtInitialPassword, "Enter Initial Password then press Enter");
             this.txtInitialPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialPassword_KeyPress);
             // 
