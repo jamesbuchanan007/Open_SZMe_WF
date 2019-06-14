@@ -18,6 +18,8 @@ namespace Open_SZME_WF
         public SecondWindow()
         {
             InitializeComponent();
+            var version = "Version: " + Application.ProductVersion;
+            labelVersion.Text = version;
             RecordIndex = 0;
             RecordId = 0;
             RecordDictionary = new Dictionary<int, RecordViewModel>();

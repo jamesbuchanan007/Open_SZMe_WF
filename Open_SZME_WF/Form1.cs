@@ -11,6 +11,8 @@ namespace Open_SZME_WF
         public Form1()
         {
             InitializeComponent();
+            var version = Application.ProductVersion;
+            labelVersion.Text = "Version: " + version;
         }
 
         private void btnForm1Clear_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace Open_SZME_WF
                 var password = GetPassword();
 
                 if (password.Tables[0].Rows.Count == 0)
-                Hide();
+                    Hide();
                 InitialLogin il = new InitialLogin();
                 il.ShowDialog();
 

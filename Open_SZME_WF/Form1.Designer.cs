@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonForm1Submit = new System.Windows.Forms.Button();
             this.btnForm1Clear = new System.Windows.Forms.Button();
+            this.labelVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,12 +91,23 @@
             this.btnForm1Clear.UseVisualStyleBackColor = false;
             this.btnForm1Clear.Click += new System.EventHandler(this.btnForm1Clear_Click);
             // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.ForeColor = System.Drawing.Color.Gray;
+            this.labelVersion.Location = new System.Drawing.Point(12, 4);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(211, 32);
+            this.labelVersion.TabIndex = 4;
+            this.labelVersion.Text = "Version: Debug";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(692, 447);
+            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.btnForm1Clear);
             this.Controls.Add(this.buttonForm1Submit);
             this.Controls.Add(this.pictureBox1);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonForm1Submit;
         private System.Windows.Forms.Button btnForm1Clear;
+        private System.Windows.Forms.Label labelVersion;
     }
 }
 

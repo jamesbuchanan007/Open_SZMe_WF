@@ -12,6 +12,8 @@ namespace Open_SZME_WF
         public Admin()
         {
             InitializeComponent();
+            var version = "Version: " + Application.ProductVersion;
+            labelVersion.Text = version;
         }
 
         private void btnAdminStartOver_Click(object sender, EventArgs e)

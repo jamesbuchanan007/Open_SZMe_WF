@@ -52,6 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.labelVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).BeginInit();
             this.SuspendLayout();
@@ -340,12 +341,23 @@
             this.label6.Size = new System.Drawing.Size(869, 5);
             this.label6.TabIndex = 16;
             // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.ForeColor = System.Drawing.Color.Gray;
+            this.labelVersion.Location = new System.Drawing.Point(12, 9);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(211, 32);
+            this.labelVersion.TabIndex = 21;
+            this.labelVersion.Text = "Version: Debug";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(957, 1337);
+            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.btnAdminClearClipboard);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.btnAdminMax);
@@ -402,5 +414,6 @@
         private System.Windows.Forms.Button btnAdminMax;
         private System.Windows.Forms.Button btnAdminRPGToClip;
         private System.Windows.Forms.Button btnAdminClearClipboard;
+        private System.Windows.Forms.Label labelVersion;
     }
 }

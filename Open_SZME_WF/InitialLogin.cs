@@ -11,6 +11,8 @@ namespace Open_SZME_WF
         public InitialLogin()
         {
             InitializeComponent();
+            var version = "Version: " + Application.ProductVersion;
+            labelVersion.Text = version;
         }
 
         private void txtInitialPassword_KeyPress(object sender, KeyPressEventArgs e)

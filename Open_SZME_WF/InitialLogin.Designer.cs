@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnInitialLoginCancel = new System.Windows.Forms.Button();
+            this.labelVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,12 +90,23 @@
             this.btnInitialLoginCancel.UseVisualStyleBackColor = false;
             this.btnInitialLoginCancel.Click += new System.EventHandler(this.btnInitialLoginCancel_Click);
             // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.ForeColor = System.Drawing.Color.Gray;
+            this.labelVersion.Location = new System.Drawing.Point(12, 9);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(211, 32);
+            this.labelVersion.TabIndex = 22;
+            this.labelVersion.Text = "Version: Debug";
+            // 
             // InitialLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(883, 539);
+            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.btnInitialLoginCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInitialPassword);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnInitialLoginCancel;
+        private System.Windows.Forms.Label labelVersion;
     }
 }
