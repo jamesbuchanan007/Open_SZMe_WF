@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Deployment.Application;
+using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -14,8 +15,8 @@ namespace Open_SZME_WF
         public Admin()
         {
             InitializeComponent();
-            var version = "Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion;
-            labelVersion.Text = version;
+            var version = Debugger.IsAttached ? "Debug" : ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            labelVersion.Text = "Version: " + version;
         }
 
         private void btnAdminStartOver_Click(object sender, EventArgs e)

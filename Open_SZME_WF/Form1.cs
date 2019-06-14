@@ -13,9 +13,10 @@ namespace Open_SZME_WF
     {
         public Form1()
         {
+            string version;
             InitializeComponent();
-            var version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
-          
+            version = Debugger.IsAttached ? "Debug" : ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+
             labelVersion.Text = "Version: " + version;
         }
 

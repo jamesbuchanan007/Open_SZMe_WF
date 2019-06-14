@@ -14,8 +14,8 @@ namespace Open_SZME_WF
         public InitialLogin()
         {
             InitializeComponent();
-            var version = "Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion;
-            labelVersion.Text = version;
+            var version = Debugger.IsAttached ? "Debug" : ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            labelVersion.Text = "Version: " + version;
         }
 
         private void txtInitialPassword_KeyPress(object sender, KeyPressEventArgs e)
