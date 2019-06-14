@@ -84,7 +84,7 @@
             this.txtQuestion1.Location = new System.Drawing.Point(52, 223);
             this.txtQuestion1.Name = "txtQuestion1";
             this.txtQuestion1.Size = new System.Drawing.Size(244, 20);
-            this.txtQuestion1.TabIndex = 24;
+            this.txtQuestion1.TabIndex = 2;
             this.txtQuestion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtQuestion1, "Enter 1st Question for Password Recovery");
             // 
@@ -93,7 +93,7 @@
             this.txtQuestion2.Location = new System.Drawing.Point(52, 315);
             this.txtQuestion2.Name = "txtQuestion2";
             this.txtQuestion2.Size = new System.Drawing.Size(244, 20);
-            this.txtQuestion2.TabIndex = 27;
+            this.txtQuestion2.TabIndex = 4;
             this.txtQuestion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtQuestion2, "Enter 2nd Question for Password Recovery");
             // 
@@ -102,7 +102,7 @@
             this.txtAnswer1.Location = new System.Drawing.Point(52, 266);
             this.txtAnswer1.Name = "txtAnswer1";
             this.txtAnswer1.Size = new System.Drawing.Size(244, 20);
-            this.txtAnswer1.TabIndex = 29;
+            this.txtAnswer1.TabIndex = 3;
             this.txtAnswer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtAnswer1, "Enter 1st Answer for Password Recovery");
             // 
@@ -111,7 +111,7 @@
             this.txtAnswer2.Location = new System.Drawing.Point(52, 359);
             this.txtAnswer2.Name = "txtAnswer2";
             this.txtAnswer2.Size = new System.Drawing.Size(244, 20);
-            this.txtAnswer2.TabIndex = 31;
+            this.txtAnswer2.TabIndex = 5;
             this.txtAnswer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtAnswer2, "Enter 2nd Answer for Password Recovery");
             // 
@@ -124,7 +124,7 @@
             this.btnInitialLoginCancel.Location = new System.Drawing.Point(28, 402);
             this.btnInitialLoginCancel.Name = "btnInitialLoginCancel";
             this.btnInitialLoginCancel.Size = new System.Drawing.Size(91, 23);
-            this.btnInitialLoginCancel.TabIndex = 3;
+            this.btnInitialLoginCancel.TabIndex = 7;
             this.btnInitialLoginCancel.Text = "Cancel Set Up";
             this.btnInitialLoginCancel.UseVisualStyleBackColor = false;
             this.btnInitialLoginCancel.Click += new System.EventHandler(this.btnInitialLoginCancel_Click);
@@ -199,9 +199,10 @@
             this.btnSaveSetUp.Location = new System.Drawing.Point(228, 402);
             this.btnSaveSetUp.Name = "btnSaveSetUp";
             this.btnSaveSetUp.Size = new System.Drawing.Size(91, 23);
-            this.btnSaveSetUp.TabIndex = 32;
+            this.btnSaveSetUp.TabIndex = 6;
             this.btnSaveSetUp.Text = "Save Set Up";
             this.btnSaveSetUp.UseVisualStyleBackColor = false;
+            this.btnSaveSetUp.Click += new System.EventHandler(this.btnSaveSetUp_Click);
             // 
             // InitialLogin
             // 
