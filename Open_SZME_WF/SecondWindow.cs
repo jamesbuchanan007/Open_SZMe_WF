@@ -187,7 +187,7 @@ namespace Open_SZME_WF
                 txt2ndFormProgramSite.Clear();
                 txt2ndFormProgramSite.Clear();
             }
-            
+
             txt2ndFormProgramSite.Focus();
         }
 
@@ -531,8 +531,7 @@ namespace Open_SZME_WF
 
         private void btnAdminRPGToClip_Click(object sender, EventArgs e)
         {
-            var copyPw = txt2ndFormPassword.Text;
-            Clipboard.SetText(copyPw);
+            if (!string.IsNullOrEmpty(txt2ndFormPassword.Text)) { Clipboard.SetText(txt2ndFormPassword.Text); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -544,7 +543,7 @@ namespace Open_SZME_WF
                 Reset();
                 ReloadRecordAndComboBox();
             }
-            
+
         }
 
         private void btnPasteSite_Click(object sender, EventArgs e)
@@ -554,7 +553,7 @@ namespace Open_SZME_WF
 
         private void btnCopyUserId_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txt2ndFormUserId.Text);
+            if (!string.IsNullOrEmpty(txt2ndFormUserId.Text) { Clipboard.SetText(txt2ndFormUserId.Text); }
         }
 
         private void btnPasteUserId_Click(object sender, EventArgs e)
@@ -565,14 +564,14 @@ namespace Open_SZME_WF
         private void SecondWindow_KeyDown(object sender, KeyEventArgs e)
         {
             //KEYBOARD SHORTCUTS
-            if(e.Control && e.KeyCode == Keys.S)
+            if (e.Control && e.KeyCode == Keys.S)
             {
                 btn2ndFormSubmit_Click(sender, e);
             }
 
-            if(e.Control && e.KeyCode == Keys.N)
+            if (e.Control && e.KeyCode == Keys.N)
             {
-                btn2ndFormNew_Click(sender,e);
+                btn2ndFormNew_Click(sender, e);
             }
 
             if (e.Control && e.KeyCode == Keys.E)
