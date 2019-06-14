@@ -111,7 +111,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return ds;
@@ -124,7 +124,6 @@ namespace Open_SZME_WF
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet ds = new DataSet();
             string sql;
-
             var connectionString = Settings.Default.OpenSZMeDbConnectionString;
 
             connection = new SqlConnection(connectionString);
@@ -143,7 +142,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return ds.Tables[0].Rows[0]["LoginPassword"].ToString();

@@ -33,6 +33,7 @@ namespace Open_SZME_WF
 
             var connectionString = Settings.Default.OpenSZMeDbConnectionString;
 
+
             connection = new SqlConnection(connectionString);
 
             try
@@ -54,7 +55,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

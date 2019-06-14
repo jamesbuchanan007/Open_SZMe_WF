@@ -103,8 +103,7 @@ namespace Open_SZME_WF
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Cannot Connect to Database", "Open SZMe", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -168,7 +167,6 @@ namespace Open_SZME_WF
             SqlConnection connection;
             SqlCommand command;
             string sql;
-
             var connectionString = Settings.Default.OpenSZMeDbConnectionString;
 
             connection = new SqlConnection(connectionString);
@@ -199,7 +197,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cannot Connect to Database", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -270,18 +270,6 @@ namespace Open_SZME_WF
 
         }
 
-        private void btn2ndFormCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult result =
-                MessageBox.Show("Cancel?", "Open SZMe", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                Reset();
-                ReloadRecordAndComboBox();
-            }
-        }
-
         private void btn2ndFormDelete_Click(object sender, EventArgs e)
         {
             RecordIndex = cmb2ndFormProgramOrSite.SelectedIndex;
@@ -326,7 +314,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cannot Open Connection", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -413,7 +401,7 @@ namespace Open_SZME_WF
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Cannot Open Connection", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     Reset();
 
@@ -460,7 +448,7 @@ namespace Open_SZME_WF
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Cannot Open Connection!!", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 Reset();
 
@@ -520,7 +508,7 @@ namespace Open_SZME_WF
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return ds;
