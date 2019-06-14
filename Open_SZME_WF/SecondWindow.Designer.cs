@@ -45,8 +45,6 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btn2ndFormPastePw = new System.Windows.Forms.Button();
             this.btn2ndFormClearClipboard = new System.Windows.Forms.Button();
-            this.btn2ndFormCancel = new System.Windows.Forms.Button();
-            this.btn2ndFormStartOver = new System.Windows.Forms.Button();
             this.txt2ndFormProgramSite = new System.Windows.Forms.TextBox();
             this.btn2ndFormSubmit = new System.Windows.Forms.Button();
             this.btnAdminRPGToClip = new System.Windows.Forms.Button();
@@ -92,10 +90,10 @@
             // 
             // txt2ndFormPassword
             // 
-            this.txt2ndFormPassword.Location = new System.Drawing.Point(141, 344);
+            this.txt2ndFormPassword.Location = new System.Drawing.Point(43, 341);
             this.txt2ndFormPassword.Name = "txt2ndFormPassword";
             this.txt2ndFormPassword.ReadOnly = true;
-            this.txt2ndFormPassword.Size = new System.Drawing.Size(224, 20);
+            this.txt2ndFormPassword.Size = new System.Drawing.Size(323, 20);
             this.txt2ndFormPassword.TabIndex = 26;
             this.txt2ndFormPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt2ndFormPassword, "Current Password");
@@ -104,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(139, 325);
+            this.label2.Location = new System.Drawing.Point(40, 325);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
@@ -116,7 +114,7 @@
             this.btn2ndFormNew.FlatAppearance.BorderSize = 0;
             this.btn2ndFormNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormNew.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormNew.Location = new System.Drawing.Point(89, 182);
+            this.btn2ndFormNew.Location = new System.Drawing.Point(45, 177);
             this.btn2ndFormNew.Name = "btn2ndFormNew";
             this.btn2ndFormNew.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormNew.TabIndex = 5;
@@ -131,7 +129,7 @@
             this.btn2ndFormEdit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormEdit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormEdit.Location = new System.Drawing.Point(170, 182);
+            this.btn2ndFormEdit.Location = new System.Drawing.Point(126, 177);
             this.btn2ndFormEdit.Name = "btn2ndFormEdit";
             this.btn2ndFormEdit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormEdit.TabIndex = 6;
@@ -146,7 +144,7 @@
             this.btn2ndFormDelete.FlatAppearance.BorderSize = 0;
             this.btn2ndFormDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormDelete.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormDelete.Location = new System.Drawing.Point(251, 182);
+            this.btn2ndFormDelete.Location = new System.Drawing.Point(207, 177);
             this.btn2ndFormDelete.Name = "btn2ndFormDelete";
             this.btn2ndFormDelete.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormDelete.TabIndex = 7;
@@ -172,10 +170,10 @@
             // 
             // txt2ndFormUserId
             // 
-            this.txt2ndFormUserId.Location = new System.Drawing.Point(141, 291);
+            this.txt2ndFormUserId.Location = new System.Drawing.Point(43, 288);
             this.txt2ndFormUserId.Name = "txt2ndFormUserId";
             this.txt2ndFormUserId.ReadOnly = true;
-            this.txt2ndFormUserId.Size = new System.Drawing.Size(224, 20);
+            this.txt2ndFormUserId.Size = new System.Drawing.Size(323, 20);
             this.txt2ndFormUserId.TabIndex = 25;
             this.txt2ndFormUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt2ndFormUserId, "Current User Id");
@@ -212,7 +210,7 @@
             this.btn2ndFormPastePw.FlatAppearance.BorderSize = 0;
             this.btn2ndFormPastePw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormPastePw.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormPastePw.Location = new System.Drawing.Point(185, 370);
+            this.btn2ndFormPastePw.Location = new System.Drawing.Point(88, 367);
             this.btn2ndFormPastePw.Name = "btn2ndFormPastePw";
             this.btn2ndFormPastePw.Size = new System.Drawing.Size(50, 23);
             this.btn2ndFormPastePw.TabIndex = 20;
@@ -227,7 +225,7 @@
             this.btn2ndFormClearClipboard.FlatAppearance.BorderSize = 0;
             this.btn2ndFormClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormClearClipboard.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormClearClipboard.Location = new System.Drawing.Point(257, 370);
+            this.btn2ndFormClearClipboard.Location = new System.Drawing.Point(259, 367);
             this.btn2ndFormClearClipboard.Name = "btn2ndFormClearClipboard";
             this.btn2ndFormClearClipboard.Size = new System.Drawing.Size(106, 23);
             this.btn2ndFormClearClipboard.TabIndex = 21;
@@ -236,44 +234,12 @@
             this.btn2ndFormClearClipboard.UseVisualStyleBackColor = false;
             this.btn2ndFormClearClipboard.Click += new System.EventHandler(this.btn2ndFormClearClipboard_Click);
             // 
-            // btn2ndFormCancel
-            // 
-            this.btn2ndFormCancel.BackColor = System.Drawing.Color.Red;
-            this.btn2ndFormCancel.Enabled = false;
-            this.btn2ndFormCancel.FlatAppearance.BorderSize = 0;
-            this.btn2ndFormCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2ndFormCancel.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormCancel.Location = new System.Drawing.Point(46, 270);
-            this.btn2ndFormCancel.Name = "btn2ndFormCancel";
-            this.btn2ndFormCancel.Size = new System.Drawing.Size(75, 23);
-            this.btn2ndFormCancel.TabIndex = 23;
-            this.btn2ndFormCancel.Text = "Cancel";
-            this.toolTip1.SetToolTip(this.btn2ndFormCancel, "Delete Password Record");
-            this.btn2ndFormCancel.UseVisualStyleBackColor = false;
-            this.btn2ndFormCancel.Click += new System.EventHandler(this.btn2ndFormCancel_Click);
-            // 
-            // btn2ndFormStartOver
-            // 
-            this.btn2ndFormStartOver.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn2ndFormStartOver.Enabled = false;
-            this.btn2ndFormStartOver.FlatAppearance.BorderSize = 0;
-            this.btn2ndFormStartOver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2ndFormStartOver.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormStartOver.Location = new System.Drawing.Point(46, 241);
-            this.btn2ndFormStartOver.Name = "btn2ndFormStartOver";
-            this.btn2ndFormStartOver.Size = new System.Drawing.Size(75, 23);
-            this.btn2ndFormStartOver.TabIndex = 22;
-            this.btn2ndFormStartOver.Text = "Clear Form";
-            this.toolTip1.SetToolTip(this.btn2ndFormStartOver, "Edit Password Record");
-            this.btn2ndFormStartOver.UseVisualStyleBackColor = false;
-            this.btn2ndFormStartOver.Click += new System.EventHandler(this.btn2ndFormStartOver_Click);
-            // 
             // txt2ndFormProgramSite
             // 
-            this.txt2ndFormProgramSite.Location = new System.Drawing.Point(141, 241);
+            this.txt2ndFormProgramSite.Location = new System.Drawing.Point(43, 238);
             this.txt2ndFormProgramSite.Name = "txt2ndFormProgramSite";
             this.txt2ndFormProgramSite.ReadOnly = true;
-            this.txt2ndFormProgramSite.Size = new System.Drawing.Size(224, 20);
+            this.txt2ndFormProgramSite.Size = new System.Drawing.Size(323, 20);
             this.txt2ndFormProgramSite.TabIndex = 24;
             this.txt2ndFormProgramSite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt2ndFormProgramSite, "Current User Id");
@@ -285,7 +251,7 @@
             this.btn2ndFormSubmit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormSubmit.Location = new System.Drawing.Point(46, 344);
+            this.btn2ndFormSubmit.Location = new System.Drawing.Point(288, 177);
             this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
             this.btn2ndFormSubmit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormSubmit.TabIndex = 28;
@@ -300,7 +266,7 @@
             this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
             this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
-            this.btnAdminRPGToClip.Location = new System.Drawing.Point(140, 370);
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(43, 367);
             this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
             this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
             this.btnAdminRPGToClip.TabIndex = 30;
@@ -313,7 +279,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(138, 272);
+            this.label3.Location = new System.Drawing.Point(40, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 10;
@@ -333,7 +299,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(138, 221);
+            this.label5.Location = new System.Drawing.Point(40, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 25;
@@ -342,7 +308,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(9, 156);
+            this.label6.Location = new System.Drawing.Point(9, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(394, 4);
             this.label6.TabIndex = 27;
@@ -363,15 +329,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(416, 593);
+            this.ClientSize = new System.Drawing.Size(413, 593);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn2ndFormSubmit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt2ndFormProgramSite);
-            this.Controls.Add(this.btn2ndFormCancel);
-            this.Controls.Add(this.btn2ndFormStartOver);
             this.Controls.Add(this.btn2ndFormClearClipboard);
             this.Controls.Add(this.btn2ndFormPastePw);
             this.Controls.Add(this.btnAdmin);
@@ -420,8 +384,6 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btn2ndFormPastePw;
         private System.Windows.Forms.Button btn2ndFormClearClipboard;
-        private System.Windows.Forms.Button btn2ndFormCancel;
-        private System.Windows.Forms.Button btn2ndFormStartOver;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt2ndFormProgramSite;
         private System.Windows.Forms.Button btn2ndFormSubmit;

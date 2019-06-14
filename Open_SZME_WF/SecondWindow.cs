@@ -169,7 +169,6 @@ namespace Open_SZME_WF
                 cmb2ndFormProgramOrSite.Enabled = false;
                 EnableAllButtons();
                 EnableClipboardButtons();
-                EnableStartOverCancelButtons();
                 btn2ndFormEdit.Enabled = false;
                 btn2ndFormDelete.Enabled = false;
                 EnableAllTextBoxes();
@@ -198,8 +197,6 @@ namespace Open_SZME_WF
             btn2ndFormEdit.Enabled = false;
             btn2ndFormDelete.Enabled = false;
             btn2ndFormSubmit.Enabled = false;
-            btn2ndFormStartOver.Enabled = false;
-            btn2ndFormCancel.Enabled = false;
             btn2ndFormPastePw.Enabled = false;
             btn2ndFormClearClipboard.Enabled = false;
         }
@@ -209,8 +206,6 @@ namespace Open_SZME_WF
             btn2ndFormEdit.Enabled = true;
             btn2ndFormDelete.Enabled = true;
             btn2ndFormSubmit.Enabled = true;
-            btn2ndFormStartOver.Enabled = true;
-            btn2ndFormCancel.Enabled = true;
             btn2ndFormPastePw.Enabled = true;
             btn2ndFormClearClipboard.Enabled = true;
         }
@@ -229,17 +224,6 @@ namespace Open_SZME_WF
             txt2ndFormUserId.ReadOnly = false;
             txt2ndFormPassword.ReadOnly = false;
             txt2ndFormMisc.ReadOnly = false;
-        }
-
-        private void EnableStartOverCancelButtons()
-        {
-            btn2ndFormStartOver.Enabled = true;
-            btn2ndFormCancel.Enabled = true;
-        }
-        private void DisableStartOverCancelButtons()
-        {
-            btn2ndFormStartOver.Enabled = false;
-            btn2ndFormCancel.Enabled = false;
         }
 
         private void EnableClipboardButtons()
@@ -279,7 +263,6 @@ namespace Open_SZME_WF
                 EnableAllButtons();
                 EnableAllTextBoxes();
                 EnableClipboardButtons();
-                EnableStartOverCancelButtons();
 
                 btn2ndFormNew.Enabled = false;
                 btn2ndFormDelete.Enabled = false;
@@ -506,7 +489,6 @@ namespace Open_SZME_WF
             DisableAllButtons();
             DisableAllTextBoxes();
             DisableClipboardButtons();
-            DisableStartOverCancelButtons();
 
             btn2ndFormNew.Enabled = true;
             btn2ndFormEdit.Enabled = true;

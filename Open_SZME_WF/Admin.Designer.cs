@@ -47,12 +47,19 @@
             this.btnAdminGenerate = new System.Windows.Forms.Button();
             this.btnAdminMax = new System.Windows.Forms.Button();
             this.btnAdminRPGToClip = new System.Windows.Forms.Button();
-            this.btnAdminClearClipboard = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.txtAnswer2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAnswer1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtQuestion2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtQuestion1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +67,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(192, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -69,7 +76,7 @@
             // 
             // txtAdminOldPassword
             // 
-            this.txtAdminOldPassword.Location = new System.Drawing.Point(59, 148);
+            this.txtAdminOldPassword.Location = new System.Drawing.Point(61, 190);
             this.txtAdminOldPassword.Name = "txtAdminOldPassword";
             this.txtAdminOldPassword.Size = new System.Drawing.Size(242, 20);
             this.txtAdminOldPassword.TabIndex = 1;
@@ -81,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 129);
+            this.label1.Location = new System.Drawing.Point(61, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 2;
@@ -91,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(59, 186);
+            this.label2.Location = new System.Drawing.Point(61, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 4;
@@ -99,7 +106,7 @@
             // 
             // txtAdminNewPassword1
             // 
-            this.txtAdminNewPassword1.Location = new System.Drawing.Point(59, 205);
+            this.txtAdminNewPassword1.Location = new System.Drawing.Point(61, 247);
             this.txtAdminNewPassword1.Name = "txtAdminNewPassword1";
             this.txtAdminNewPassword1.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword1.TabIndex = 3;
@@ -111,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(59, 243);
+            this.label3.Location = new System.Drawing.Point(61, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 6;
@@ -119,7 +126,7 @@
             // 
             // txtAdminNewPassword2
             // 
-            this.txtAdminNewPassword2.Location = new System.Drawing.Point(59, 262);
+            this.txtAdminNewPassword2.Location = new System.Drawing.Point(61, 304);
             this.txtAdminNewPassword2.Name = "txtAdminNewPassword2";
             this.txtAdminNewPassword2.Size = new System.Drawing.Size(242, 20);
             this.txtAdminNewPassword2.TabIndex = 5;
@@ -133,11 +140,11 @@
             this.btnAdminSubmit.FlatAppearance.BorderSize = 0;
             this.btnAdminSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnAdminSubmit.Location = new System.Drawing.Point(226, 315);
+            this.btnAdminSubmit.Location = new System.Drawing.Point(360, 125);
             this.btnAdminSubmit.Name = "btnAdminSubmit";
             this.btnAdminSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminSubmit.TabIndex = 7;
-            this.btnAdminSubmit.Text = "Submit";
+            this.btnAdminSubmit.TabIndex = 11;
+            this.btnAdminSubmit.Text = "Save";
             this.toolTip1.SetToolTip(this.btnAdminSubmit, "Submit");
             this.btnAdminSubmit.UseVisualStyleBackColor = false;
             this.btnAdminSubmit.Click += new System.EventHandler(this.btnAdminSubmit_Click);
@@ -148,7 +155,7 @@
             this.btnAdminStartOver.FlatAppearance.BorderSize = 0;
             this.btnAdminStartOver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminStartOver.ForeColor = System.Drawing.Color.White;
-            this.btnAdminStartOver.Location = new System.Drawing.Point(142, 315);
+            this.btnAdminStartOver.Location = new System.Drawing.Point(279, 125);
             this.btnAdminStartOver.Name = "btnAdminStartOver";
             this.btnAdminStartOver.Size = new System.Drawing.Size(75, 23);
             this.btnAdminStartOver.TabIndex = 8;
@@ -163,7 +170,7 @@
             this.btnAdminCancel.FlatAppearance.BorderSize = 0;
             this.btnAdminCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminCancel.ForeColor = System.Drawing.Color.White;
-            this.btnAdminCancel.Location = new System.Drawing.Point(59, 315);
+            this.btnAdminCancel.Location = new System.Drawing.Point(196, 125);
             this.btnAdminCancel.Name = "btnAdminCancel";
             this.btnAdminCancel.Size = new System.Drawing.Size(75, 23);
             this.btnAdminCancel.TabIndex = 9;
@@ -174,7 +181,7 @@
             // 
             // txtAdminRandomPassword
             // 
-            this.txtAdminRandomPassword.Location = new System.Drawing.Point(62, 413);
+            this.txtAdminRandomPassword.Location = new System.Drawing.Point(280, 436);
             this.txtAdminRandomPassword.Name = "txtAdminRandomPassword";
             this.txtAdminRandomPassword.ReadOnly = true;
             this.txtAdminRandomPassword.Size = new System.Drawing.Size(242, 20);
@@ -183,7 +190,7 @@
             // 
             // numericAdminNumCharacters
             // 
-            this.numericAdminNumCharacters.Location = new System.Drawing.Point(62, 490);
+            this.numericAdminNumCharacters.Location = new System.Drawing.Point(102, 436);
             this.numericAdminNumCharacters.Maximum = new decimal(new int[] {
             32,
             0,
@@ -206,10 +213,9 @@
             // 
             // chkBxSpecialCharacter
             // 
-            this.chkBxSpecialCharacter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkBxSpecialCharacter.AutoSize = true;
             this.chkBxSpecialCharacter.ForeColor = System.Drawing.Color.White;
-            this.chkBxSpecialCharacter.Location = new System.Drawing.Point(59, 692);
+            this.chkBxSpecialCharacter.Location = new System.Drawing.Point(99, 466);
             this.chkBxSpecialCharacter.Name = "chkBxSpecialCharacter";
             this.chkBxSpecialCharacter.Size = new System.Drawing.Size(153, 17);
             this.chkBxSpecialCharacter.TabIndex = 14;
@@ -223,7 +229,7 @@
             this.btnAdminGenerate.FlatAppearance.BorderSize = 0;
             this.btnAdminGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminGenerate.ForeColor = System.Drawing.Color.White;
-            this.btnAdminGenerate.Location = new System.Drawing.Point(226, 486);
+            this.btnAdminGenerate.Location = new System.Drawing.Point(528, 434);
             this.btnAdminGenerate.Name = "btnAdminGenerate";
             this.btnAdminGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnAdminGenerate.TabIndex = 15;
@@ -238,7 +244,7 @@
             this.btnAdminMax.FlatAppearance.BorderSize = 0;
             this.btnAdminMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminMax.ForeColor = System.Drawing.Color.White;
-            this.btnAdminMax.Location = new System.Drawing.Point(148, 488);
+            this.btnAdminMax.Location = new System.Drawing.Point(188, 436);
             this.btnAdminMax.Name = "btnAdminMax";
             this.btnAdminMax.Size = new System.Drawing.Size(37, 20);
             this.btnAdminMax.TabIndex = 18;
@@ -253,35 +259,20 @@
             this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
             this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
-            this.btnAdminRPGToClip.Location = new System.Drawing.Point(62, 436);
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(399, 460);
             this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
-            this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
+            this.btnAdminRPGToClip.Size = new System.Drawing.Size(123, 23);
             this.btnAdminRPGToClip.TabIndex = 19;
-            this.btnAdminRPGToClip.Text = "Copy";
+            this.btnAdminRPGToClip.Text = "Copy to Clipboard";
             this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
             this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
             this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
-            // 
-            // btnAdminClearClipboard
-            // 
-            this.btnAdminClearClipboard.BackColor = System.Drawing.Color.Red;
-            this.btnAdminClearClipboard.FlatAppearance.BorderSize = 0;
-            this.btnAdminClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminClearClipboard.ForeColor = System.Drawing.Color.White;
-            this.btnAdminClearClipboard.Location = new System.Drawing.Point(262, 436);
-            this.btnAdminClearClipboard.Name = "btnAdminClearClipboard";
-            this.btnAdminClearClipboard.Size = new System.Drawing.Size(39, 23);
-            this.btnAdminClearClipboard.TabIndex = 20;
-            this.btnAdminClearClipboard.Text = "Clear";
-            this.toolTip1.SetToolTip(this.btnAdminClearClipboard, "Clear Clipboard");
-            this.btnAdminClearClipboard.UseVisualStyleBackColor = false;
-            this.btnAdminClearClipboard.Click += new System.EventHandler(this.btnAdminClearClipboard_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(62, 394);
+            this.label4.Location = new System.Drawing.Point(280, 417);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 13);
             this.label4.TabIndex = 11;
@@ -291,18 +282,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(62, 474);
+            this.label5.Location = new System.Drawing.Point(102, 420);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(127, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "# of Characters";
+            this.label5.Text = "# of Characters (Max: 32)";
             // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(21, 372);
+            this.label6.Location = new System.Drawing.Point(12, 406);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(326, 2);
+            this.label6.Size = new System.Drawing.Size(653, 2);
             this.label6.TabIndex = 16;
             // 
             // labelVersion
@@ -316,14 +307,97 @@
             this.labelVersion.TabIndex = 21;
             this.labelVersion.Text = "Version: Debug";
             // 
+            // txtAnswer2
+            // 
+            this.txtAnswer2.Location = new System.Drawing.Point(359, 359);
+            this.txtAnswer2.Name = "txtAnswer2";
+            this.txtAnswer2.Size = new System.Drawing.Size(244, 20);
+            this.txtAnswer2.TabIndex = 10;
+            this.txtAnswer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtAnswer2, "Enter 2nd Answer for Password Recovery");
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(357, 342);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Answer #2";
+            // 
+            // txtAnswer1
+            // 
+            this.txtAnswer1.Location = new System.Drawing.Point(359, 247);
+            this.txtAnswer1.Name = "txtAnswer1";
+            this.txtAnswer1.Size = new System.Drawing.Size(244, 20);
+            this.txtAnswer1.TabIndex = 8;
+            this.txtAnswer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtAnswer1, "Enter 1st Answer for Password Recovery");
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(357, 230);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Answer #1";
+            // 
+            // txtQuestion2
+            // 
+            this.txtQuestion2.Location = new System.Drawing.Point(360, 304);
+            this.txtQuestion2.Name = "txtQuestion2";
+            this.txtQuestion2.Size = new System.Drawing.Size(244, 20);
+            this.txtQuestion2.TabIndex = 9;
+            this.txtQuestion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtQuestion2, "Enter 2nd Question for Password Recovery");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(358, 288);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Question #2";
+            // 
+            // txtQuestion1
+            // 
+            this.txtQuestion1.Location = new System.Drawing.Point(359, 190);
+            this.txtQuestion1.Name = "txtQuestion1";
+            this.txtQuestion1.Size = new System.Drawing.Size(244, 20);
+            this.txtQuestion1.TabIndex = 7;
+            this.txtQuestion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtQuestion1, "Enter 1st Question for Password Recovery");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(356, 171);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Question #1";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(359, 536);
+            this.ClientSize = new System.Drawing.Size(675, 565);
+            this.Controls.Add(this.txtAnswer2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtAnswer1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtQuestion2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtQuestion1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.labelVersion);
-            this.Controls.Add(this.btnAdminClearClipboard);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.btnAdminMax);
             this.Controls.Add(this.label6);
@@ -377,7 +451,14 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Button btnAdminMax;
         private System.Windows.Forms.Button btnAdminRPGToClip;
-        private System.Windows.Forms.Button btnAdminClearClipboard;
         private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.TextBox txtAnswer2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtAnswer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtQuestion2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtQuestion1;
+        private System.Windows.Forms.Label label10;
     }
 }
