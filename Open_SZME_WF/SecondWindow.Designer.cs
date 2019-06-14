@@ -49,12 +49,12 @@
             this.btn2ndFormStartOver = new System.Windows.Forms.Button();
             this.txt2ndFormProgramSite = new System.Windows.Forms.TextBox();
             this.btn2ndFormSubmit = new System.Windows.Forms.Button();
+            this.btnAdminRPGToClip = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.btnAdminRPGToClip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@
             this.btn2ndFormNew.FlatAppearance.BorderSize = 0;
             this.btn2ndFormNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormNew.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormNew.Location = new System.Drawing.Point(45, 183);
+            this.btn2ndFormNew.Location = new System.Drawing.Point(89, 182);
             this.btn2ndFormNew.Name = "btn2ndFormNew";
             this.btn2ndFormNew.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormNew.TabIndex = 5;
@@ -131,7 +131,7 @@
             this.btn2ndFormEdit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormEdit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormEdit.Location = new System.Drawing.Point(126, 183);
+            this.btn2ndFormEdit.Location = new System.Drawing.Point(170, 182);
             this.btn2ndFormEdit.Name = "btn2ndFormEdit";
             this.btn2ndFormEdit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormEdit.TabIndex = 6;
@@ -146,7 +146,7 @@
             this.btn2ndFormDelete.FlatAppearance.BorderSize = 0;
             this.btn2ndFormDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormDelete.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormDelete.Location = new System.Drawing.Point(207, 183);
+            this.btn2ndFormDelete.Location = new System.Drawing.Point(251, 182);
             this.btn2ndFormDelete.Name = "btn2ndFormDelete";
             this.btn2ndFormDelete.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormDelete.TabIndex = 7;
@@ -263,7 +263,7 @@
             this.btn2ndFormStartOver.Name = "btn2ndFormStartOver";
             this.btn2ndFormStartOver.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormStartOver.TabIndex = 22;
-            this.btn2ndFormStartOver.Text = "Start Over";
+            this.btn2ndFormStartOver.Text = "Clear Form";
             this.toolTip1.SetToolTip(this.btn2ndFormStartOver, "Edit Password Record");
             this.btn2ndFormStartOver.UseVisualStyleBackColor = false;
             this.btn2ndFormStartOver.Click += new System.EventHandler(this.btn2ndFormStartOver_Click);
@@ -285,14 +285,29 @@
             this.btn2ndFormSubmit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormSubmit.Location = new System.Drawing.Point(288, 183);
+            this.btn2ndFormSubmit.Location = new System.Drawing.Point(46, 344);
             this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
             this.btn2ndFormSubmit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormSubmit.TabIndex = 28;
-            this.btn2ndFormSubmit.Text = "Submit";
+            this.btn2ndFormSubmit.Text = "Save";
             this.toolTip1.SetToolTip(this.btn2ndFormSubmit, "Add New Password Record");
             this.btn2ndFormSubmit.UseVisualStyleBackColor = false;
             this.btn2ndFormSubmit.Click += new System.EventHandler(this.btn2ndFormSubmit_Click);
+            // 
+            // btnAdminRPGToClip
+            // 
+            this.btnAdminRPGToClip.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
+            this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(140, 370);
+            this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
+            this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
+            this.btnAdminRPGToClip.TabIndex = 30;
+            this.btnAdminRPGToClip.Text = "Copy";
+            this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
+            this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
+            this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
             // 
             // label3
             // 
@@ -343,27 +358,12 @@
             this.labelVersion.TabIndex = 29;
             this.labelVersion.Text = "Version: Debug";
             // 
-            // btnAdminRPGToClip
-            // 
-            this.btnAdminRPGToClip.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
-            this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
-            this.btnAdminRPGToClip.Location = new System.Drawing.Point(140, 370);
-            this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
-            this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
-            this.btnAdminRPGToClip.TabIndex = 30;
-            this.btnAdminRPGToClip.Text = "Copy";
-            this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
-            this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
-            this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
-            // 
             // SecondWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(416, 584);
+            this.ClientSize = new System.Drawing.Size(416, 593);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.label6);
@@ -390,7 +390,7 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(432, 367);
+            this.MinimumSize = new System.Drawing.Size(422, 338);
             this.Name = "SecondWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe";

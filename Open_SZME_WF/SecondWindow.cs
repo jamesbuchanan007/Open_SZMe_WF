@@ -181,8 +181,11 @@ namespace Open_SZME_WF
             if (result == DialogResult.Yes)
             {
                 txt2ndFormPassword.Clear();
+                txt2ndFormMisc.Clear();
+                txt2ndFormProgramSite.Clear();
+                txt2ndFormProgramSite.Clear();
             }
-
+            
             txt2ndFormProgramSite.Focus();
         }
 
@@ -289,6 +292,7 @@ namespace Open_SZME_WF
             if (result == DialogResult.Yes)
             {
                 Reset();
+                ReloadRecordAndComboBox();
             }
         }
 
