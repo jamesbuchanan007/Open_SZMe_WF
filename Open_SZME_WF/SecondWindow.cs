@@ -551,6 +551,12 @@ namespace Open_SZME_WF
 
             RecordId = value.Id;
         }
+
+        private void btnAdminRPGToClip_Click(object sender, EventArgs e)
+        {
+            var copyPw = txt2ndFormPassword.Text;
+            Clipboard.SetText(copyPw);
+        }
     }
 
     public class RecordViewModel

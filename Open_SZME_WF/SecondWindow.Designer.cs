@@ -54,6 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.btnAdminRPGToClip = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,7 +212,7 @@
             this.btn2ndFormPastePw.FlatAppearance.BorderSize = 0;
             this.btn2ndFormPastePw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormPastePw.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormPastePw.Location = new System.Drawing.Point(142, 370);
+            this.btn2ndFormPastePw.Location = new System.Drawing.Point(185, 370);
             this.btn2ndFormPastePw.Name = "btn2ndFormPastePw";
             this.btn2ndFormPastePw.Size = new System.Drawing.Size(50, 23);
             this.btn2ndFormPastePw.TabIndex = 20;
@@ -342,12 +343,28 @@
             this.labelVersion.TabIndex = 29;
             this.labelVersion.Text = "Version: Debug";
             // 
+            // btnAdminRPGToClip
+            // 
+            this.btnAdminRPGToClip.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminRPGToClip.FlatAppearance.BorderSize = 0;
+            this.btnAdminRPGToClip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminRPGToClip.ForeColor = System.Drawing.Color.White;
+            this.btnAdminRPGToClip.Location = new System.Drawing.Point(140, 370);
+            this.btnAdminRPGToClip.Name = "btnAdminRPGToClip";
+            this.btnAdminRPGToClip.Size = new System.Drawing.Size(39, 23);
+            this.btnAdminRPGToClip.TabIndex = 30;
+            this.btnAdminRPGToClip.Text = "Copy";
+            this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
+            this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
+            this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
+            // 
             // SecondWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(416, 584);
+            this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn2ndFormSubmit);
@@ -410,5 +427,6 @@
         private System.Windows.Forms.Button btn2ndFormSubmit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.Button btnAdminRPGToClip;
     }
 }
