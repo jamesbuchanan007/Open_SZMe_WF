@@ -148,5 +148,12 @@ namespace Open_SZME_WF
 
             return ds.Tables[0].Rows[0]["LoginPassword"].ToString();
         }
+
+        private void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ForgotPassword fp = new ForgotPassword();
+            fp.Show();
+        }
     }
 }

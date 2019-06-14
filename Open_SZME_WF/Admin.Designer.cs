@@ -322,9 +322,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(357, 342);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(157, 13);
             this.label7.TabIndex = 38;
-            this.label7.Text = "Answer #2";
+            this.label7.Text = "Answer #2 (Not Case-Sensitive)";
             // 
             // txtAnswer1
             // 
@@ -341,9 +341,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(357, 230);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.Size = new System.Drawing.Size(157, 13);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Answer #1";
+            this.label8.Text = "Answer #1 (Not Case-Sensitive)";
             // 
             // txtQuestion2
             // 
@@ -388,7 +388,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(675, 565);
+            this.ClientSize = new System.Drawing.Size(675, 519);
             this.Controls.Add(this.txtAnswer2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAnswer1);

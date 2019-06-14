@@ -122,13 +122,13 @@ namespace Open_SZME_WF
                 var q1New = q1.Text.Trim();
 
                 var a1Old = loginPwDataSet.Tables[0].Rows[0]["LoginAnswerOne"].ToString();
-                var a1New = a1.Text.Trim();
+                var a1New = a1.Text.Trim().ToLower();
 
                 var q2Old = loginPwDataSet.Tables[0].Rows[0]["LoginQuestionTwo"].ToString();
                 var q2New = q2.Text.Trim();
 
                 var a2Old = loginPwDataSet.Tables[0].Rows[0]["LoginAnswerTwo"].ToString();
-                var a2New = a2.Text.Trim();
+                var a2New = a2.Text.Trim().ToLower();
 
                 var pwOld = loginPwDataSet.Tables[0].Rows[0]["LoginPassword"].ToString();
                 var pwNew = pw1.Text.Trim();
@@ -212,9 +212,9 @@ namespace Open_SZME_WF
         {
             var newPw = txtAdminNewPassword1.Text.Trim();
             var newQ1 = txtQuestion1.Text.Trim();
-            var newA1 = txtAnswer1.Text.Trim();
+            var newA1 = txtAnswer1.Text.Trim().ToLower();
             var newQ2 = txtQuestion2.Text.Trim();
-            var newA2 = txtAnswer2.Text.Trim();
+            var newA2 = txtAnswer2.Text.Trim().ToLower();
 
             var pwChanged = !string.IsNullOrEmpty(newPw);
             var dbPw = pwChanged ? newPw : txtAdminOldPassword.Text.Trim();
@@ -334,19 +334,6 @@ namespace Open_SZME_WF
 
             Clipboard.SetText(txtAdminRandomPassword.Text);
             Hide();
-        }
-
-        private void btnAdminClearClipboard_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Clipboard.Clear();
-                MessageBox.Show("Clipboard is Cleared", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception eg)
-            {
-                MessageBox.Show(eg.ToString());
-            }
         }
     }
 }
