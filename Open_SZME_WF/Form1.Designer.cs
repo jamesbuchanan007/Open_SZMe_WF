@@ -42,10 +42,12 @@
             // txtForm1Password
             // 
             this.txtForm1Password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtForm1Password.Location = new System.Drawing.Point(109, 255);
+            this.txtForm1Password.Location = new System.Drawing.Point(44, 102);
+            this.txtForm1Password.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txtForm1Password.Name = "txtForm1Password";
-            this.txtForm1Password.Size = new System.Drawing.Size(482, 38);
+            this.txtForm1Password.Size = new System.Drawing.Size(195, 20);
             this.txtForm1Password.TabIndex = 0;
+            this.txtForm1Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtForm1Password, "Enter Password");
             this.txtForm1Password.UseSystemPasswordChar = true;
             this.txtForm1Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtForm1Password_KeyPress);
@@ -54,9 +56,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Open_SZME_WF.Properties.Resources.Open_SZMe_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(79, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(543, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(217, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -68,9 +71,10 @@
             this.buttonForm1Submit.FlatAppearance.BorderSize = 0;
             this.buttonForm1Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForm1Submit.ForeColor = System.Drawing.Color.White;
-            this.buttonForm1Submit.Location = new System.Drawing.Point(498, 364);
+            this.buttonForm1Submit.Location = new System.Drawing.Point(199, 146);
+            this.buttonForm1Submit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonForm1Submit.Name = "buttonForm1Submit";
-            this.buttonForm1Submit.Size = new System.Drawing.Size(159, 54);
+            this.buttonForm1Submit.Size = new System.Drawing.Size(64, 22);
             this.buttonForm1Submit.TabIndex = 2;
             this.buttonForm1Submit.Text = "Submit";
             this.buttonForm1Submit.UseVisualStyleBackColor = false;
@@ -83,9 +87,10 @@
             this.btnForm1Clear.FlatAppearance.BorderSize = 0;
             this.btnForm1Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForm1Clear.ForeColor = System.Drawing.Color.White;
-            this.btnForm1Clear.Location = new System.Drawing.Point(30, 364);
+            this.btnForm1Clear.Location = new System.Drawing.Point(12, 146);
+            this.btnForm1Clear.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnForm1Clear.Name = "btnForm1Clear";
-            this.btnForm1Clear.Size = new System.Drawing.Size(159, 54);
+            this.btnForm1Clear.Size = new System.Drawing.Size(64, 22);
             this.btnForm1Clear.TabIndex = 3;
             this.btnForm1Clear.Text = "Clear";
             this.btnForm1Clear.UseVisualStyleBackColor = false;
@@ -96,18 +101,19 @@
             this.labelVersion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelVersion.AutoSize = true;
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
-            this.labelVersion.Location = new System.Drawing.Point(12, 4);
+            this.labelVersion.Location = new System.Drawing.Point(5, 2);
+            this.labelVersion.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(211, 32);
+            this.labelVersion.Size = new System.Drawing.Size(80, 13);
             this.labelVersion.TabIndex = 4;
             this.labelVersion.Text = "Version: Debug";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(692, 447);
+            this.ClientSize = new System.Drawing.Size(277, 179);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.btnForm1Clear);
             this.Controls.Add(this.buttonForm1Submit);
@@ -115,6 +121,7 @@
             this.Controls.Add(this.txtForm1Password);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe - Login";
