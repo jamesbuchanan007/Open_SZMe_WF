@@ -118,6 +118,7 @@
             // btnInitialLoginCancel
             // 
             this.btnInitialLoginCancel.BackColor = System.Drawing.Color.Red;
+            this.btnInitialLoginCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnInitialLoginCancel.FlatAppearance.BorderSize = 0;
             this.btnInitialLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInitialLoginCancel.ForeColor = System.Drawing.Color.White;
@@ -206,9 +207,11 @@
             // 
             // InitialLogin
             // 
+            this.AcceptButton = this.btnSaveSetUp;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
+            this.CancelButton = this.btnInitialLoginCancel;
             this.ClientSize = new System.Drawing.Size(345, 449);
             this.Controls.Add(this.btnSaveSetUp);
             this.Controls.Add(this.txtAnswer2);

@@ -167,6 +167,7 @@
             // btnAdminCancel
             // 
             this.btnAdminCancel.BackColor = System.Drawing.Color.Red;
+            this.btnAdminCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAdminCancel.FlatAppearance.BorderSize = 0;
             this.btnAdminCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminCancel.ForeColor = System.Drawing.Color.White;
@@ -385,9 +386,11 @@
             // 
             // Admin
             // 
+            this.AcceptButton = this.btnAdminSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
+            this.CancelButton = this.btnAdminCancel;
             this.ClientSize = new System.Drawing.Size(675, 519);
             this.Controls.Add(this.txtAnswer2);
             this.Controls.Add(this.label7);

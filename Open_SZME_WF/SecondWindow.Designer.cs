@@ -57,6 +57,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.btnCopyMisc = new System.Windows.Forms.Button();
+            this.btnPasteMisc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +162,7 @@
             // btn2ndFormExit
             // 
             this.btn2ndFormExit.BackColor = System.Drawing.Color.Red;
+            this.btn2ndFormExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn2ndFormExit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormExit.ForeColor = System.Drawing.Color.White;
@@ -390,12 +393,47 @@
             this.labelVersion.TabIndex = 29;
             this.labelVersion.Text = "Version: Debug";
             // 
+            // btnCopyMisc
+            // 
+            this.btnCopyMisc.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCopyMisc.FlatAppearance.BorderSize = 0;
+            this.btnCopyMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopyMisc.ForeColor = System.Drawing.Color.White;
+            this.btnCopyMisc.Location = new System.Drawing.Point(43, 553);
+            this.btnCopyMisc.Name = "btnCopyMisc";
+            this.btnCopyMisc.Size = new System.Drawing.Size(39, 23);
+            this.btnCopyMisc.TabIndex = 36;
+            this.btnCopyMisc.Text = "Copy";
+            this.toolTip1.SetToolTip(this.btnCopyMisc, "Copy Miscellaneous to Clipboard");
+            this.btnCopyMisc.UseVisualStyleBackColor = false;
+            this.btnCopyMisc.Click += new System.EventHandler(this.btnCopyMisc_Click);
+            // 
+            // btnPasteMisc
+            // 
+            this.btnPasteMisc.BackColor = System.Drawing.Color.Green;
+            this.btnPasteMisc.Enabled = false;
+            this.btnPasteMisc.FlatAppearance.BorderSize = 0;
+            this.btnPasteMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasteMisc.ForeColor = System.Drawing.Color.White;
+            this.btnPasteMisc.Location = new System.Drawing.Point(88, 553);
+            this.btnPasteMisc.Name = "btnPasteMisc";
+            this.btnPasteMisc.Size = new System.Drawing.Size(50, 23);
+            this.btnPasteMisc.TabIndex = 35;
+            this.btnPasteMisc.Text = "Paste";
+            this.toolTip1.SetToolTip(this.btnPasteMisc, "Paste Misc from Clipboard");
+            this.btnPasteMisc.UseVisualStyleBackColor = false;
+            this.btnPasteMisc.Click += new System.EventHandler(this.btnPasteMisc_Click);
+            // 
             // SecondWindow
             // 
+            this.AcceptButton = this.btn2ndFormSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
+            this.CancelButton = this.btn2ndFormExit;
             this.ClientSize = new System.Drawing.Size(413, 674);
+            this.Controls.Add(this.btnCopyMisc);
+            this.Controls.Add(this.btnPasteMisc);
             this.Controls.Add(this.btnCopyUserId);
             this.Controls.Add(this.btnPasteSite);
             this.Controls.Add(this.btnPasteUserId);
@@ -466,5 +504,7 @@
         private System.Windows.Forms.Button btnPasteUserId;
         private System.Windows.Forms.Button btnPasteSite;
         private System.Windows.Forms.Button btnCopyUserId;
+        private System.Windows.Forms.Button btnCopyMisc;
+        private System.Windows.Forms.Button btnPasteMisc;
     }
 }

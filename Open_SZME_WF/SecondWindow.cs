@@ -198,6 +198,9 @@ namespace Open_SZME_WF
             btn2ndFormDelete.Enabled = false;
             btn2ndFormSubmit.Enabled = false;
             btn2ndFormPastePw.Enabled = false;
+            btnPasteSite.Enabled = false;
+            btnPasteUserId.Enabled = false;
+            btnPasteMisc.Enabled = false;
             btn2ndFormClearClipboard.Enabled = false;
         }
         private void EnableAllButtons()
@@ -207,6 +210,9 @@ namespace Open_SZME_WF
             btn2ndFormDelete.Enabled = true;
             btn2ndFormSubmit.Enabled = true;
             btn2ndFormPastePw.Enabled = true;
+            btnPasteSite.Enabled = true;
+            btnPasteUserId.Enabled = true;
+            btnPasteMisc.Enabled = true;
             btn2ndFormClearClipboard.Enabled = true;
         }
 
@@ -583,6 +589,16 @@ namespace Open_SZME_WF
             {
                 btn2ndFormDelete_Click(sender, e);
             }
+        }
+
+        private void btnCopyMisc_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt2ndFormMisc.Text)) { Clipboard.SetText(txt2ndFormMisc.Text);}
+        }
+
+        private void btnPasteMisc_Click(object sender, EventArgs e)
+        {
+            txt2ndFormMisc.Text = Clipboard.GetText();
         }
     }
 
