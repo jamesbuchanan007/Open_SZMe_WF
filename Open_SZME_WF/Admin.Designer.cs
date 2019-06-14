@@ -47,18 +47,18 @@
             this.btnAdminGenerate = new System.Windows.Forms.Button();
             this.btnAdminMax = new System.Windows.Forms.Button();
             this.btnAdminRPGToClip = new System.Windows.Forms.Button();
+            this.txtAnswer2 = new System.Windows.Forms.TextBox();
+            this.txtAnswer1 = new System.Windows.Forms.TextBox();
+            this.txtQuestion2 = new System.Windows.Forms.TextBox();
+            this.txtQuestion1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.txtAnswer2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtAnswer1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtQuestion2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtQuestion1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).BeginInit();
@@ -91,7 +91,7 @@
             this.label1.Location = new System.Drawing.Point(61, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 20;
             this.label1.Text = "Old Password";
             // 
             // label2
@@ -101,7 +101,7 @@
             this.label2.Location = new System.Drawing.Point(61, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 21;
             this.label2.Text = "New Password";
             // 
             // txtAdminNewPassword1
@@ -121,7 +121,7 @@
             this.label3.Location = new System.Drawing.Point(61, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 21;
             this.label3.Text = "Confirm Password";
             // 
             // txtAdminNewPassword2
@@ -158,7 +158,7 @@
             this.btnAdminStartOver.Location = new System.Drawing.Point(279, 125);
             this.btnAdminStartOver.Name = "btnAdminStartOver";
             this.btnAdminStartOver.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminStartOver.TabIndex = 8;
+            this.btnAdminStartOver.TabIndex = 13;
             this.btnAdminStartOver.Text = "Start Over";
             this.toolTip1.SetToolTip(this.btnAdminStartOver, "Start Over");
             this.btnAdminStartOver.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             this.btnAdminCancel.Location = new System.Drawing.Point(196, 125);
             this.btnAdminCancel.Name = "btnAdminCancel";
             this.btnAdminCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminCancel.TabIndex = 9;
+            this.btnAdminCancel.TabIndex = 12;
             this.btnAdminCancel.Text = "Cancel";
             this.toolTip1.SetToolTip(this.btnAdminCancel, "Cancel");
             this.btnAdminCancel.UseVisualStyleBackColor = false;
@@ -185,7 +185,7 @@
             this.txtAdminRandomPassword.Name = "txtAdminRandomPassword";
             this.txtAdminRandomPassword.ReadOnly = true;
             this.txtAdminRandomPassword.Size = new System.Drawing.Size(242, 20);
-            this.txtAdminRandomPassword.TabIndex = 10;
+            this.txtAdminRandomPassword.TabIndex = 17;
             this.toolTip1.SetToolTip(this.txtAdminRandomPassword, "Random Password");
             // 
             // numericAdminNumCharacters
@@ -203,7 +203,7 @@
             0});
             this.numericAdminNumCharacters.Name = "numericAdminNumCharacters";
             this.numericAdminNumCharacters.Size = new System.Drawing.Size(80, 20);
-            this.numericAdminNumCharacters.TabIndex = 12;
+            this.numericAdminNumCharacters.TabIndex = 14;
             this.toolTip1.SetToolTip(this.numericAdminNumCharacters, "Number of Characters (Max 20)");
             this.numericAdminNumCharacters.Value = new decimal(new int[] {
             5,
@@ -218,7 +218,7 @@
             this.chkBxSpecialCharacter.Location = new System.Drawing.Point(99, 466);
             this.chkBxSpecialCharacter.Name = "chkBxSpecialCharacter";
             this.chkBxSpecialCharacter.Size = new System.Drawing.Size(153, 17);
-            this.chkBxSpecialCharacter.TabIndex = 14;
+            this.chkBxSpecialCharacter.TabIndex = 16;
             this.chkBxSpecialCharacter.Text = "Include Special Characters";
             this.toolTip1.SetToolTip(this.chkBxSpecialCharacter, "Include Special Characters (~`!@#$%^&*()+=_-{}[], etc.)");
             this.chkBxSpecialCharacter.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@
             this.btnAdminGenerate.Location = new System.Drawing.Point(528, 434);
             this.btnAdminGenerate.Name = "btnAdminGenerate";
             this.btnAdminGenerate.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminGenerate.TabIndex = 15;
+            this.btnAdminGenerate.TabIndex = 18;
             this.btnAdminGenerate.Text = "Generate";
             this.toolTip1.SetToolTip(this.btnAdminGenerate, "Generate Random Password");
             this.btnAdminGenerate.UseVisualStyleBackColor = false;
@@ -247,7 +247,7 @@
             this.btnAdminMax.Location = new System.Drawing.Point(188, 436);
             this.btnAdminMax.Name = "btnAdminMax";
             this.btnAdminMax.Size = new System.Drawing.Size(37, 20);
-            this.btnAdminMax.TabIndex = 18;
+            this.btnAdminMax.TabIndex = 15;
             this.btnAdminMax.Text = "Max";
             this.toolTip1.SetToolTip(this.btnAdminMax, "Generate Random Password");
             this.btnAdminMax.UseVisualStyleBackColor = false;
@@ -267,6 +267,42 @@
             this.toolTip1.SetToolTip(this.btnAdminRPGToClip, "Copy Random Password to Clipboard");
             this.btnAdminRPGToClip.UseVisualStyleBackColor = false;
             this.btnAdminRPGToClip.Click += new System.EventHandler(this.btnAdminRPGToClip_Click);
+            // 
+            // txtAnswer2
+            // 
+            this.txtAnswer2.Location = new System.Drawing.Point(359, 359);
+            this.txtAnswer2.Name = "txtAnswer2";
+            this.txtAnswer2.Size = new System.Drawing.Size(244, 20);
+            this.txtAnswer2.TabIndex = 10;
+            this.txtAnswer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtAnswer2, "Enter 2nd Answer for Password Recovery");
+            // 
+            // txtAnswer1
+            // 
+            this.txtAnswer1.Location = new System.Drawing.Point(359, 247);
+            this.txtAnswer1.Name = "txtAnswer1";
+            this.txtAnswer1.Size = new System.Drawing.Size(244, 20);
+            this.txtAnswer1.TabIndex = 8;
+            this.txtAnswer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtAnswer1, "Enter 1st Answer for Password Recovery");
+            // 
+            // txtQuestion2
+            // 
+            this.txtQuestion2.Location = new System.Drawing.Point(360, 304);
+            this.txtQuestion2.Name = "txtQuestion2";
+            this.txtQuestion2.Size = new System.Drawing.Size(244, 20);
+            this.txtQuestion2.TabIndex = 9;
+            this.txtQuestion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtQuestion2, "Enter 2nd Question for Password Recovery");
+            // 
+            // txtQuestion1
+            // 
+            this.txtQuestion1.Location = new System.Drawing.Point(359, 190);
+            this.txtQuestion1.Name = "txtQuestion1";
+            this.txtQuestion1.Size = new System.Drawing.Size(244, 20);
+            this.txtQuestion1.TabIndex = 7;
+            this.txtQuestion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtQuestion1, "Enter 1st Question for Password Recovery");
             // 
             // label4
             // 
@@ -307,15 +343,6 @@
             this.labelVersion.TabIndex = 21;
             this.labelVersion.Text = "Version: Debug";
             // 
-            // txtAnswer2
-            // 
-            this.txtAnswer2.Location = new System.Drawing.Point(359, 359);
-            this.txtAnswer2.Name = "txtAnswer2";
-            this.txtAnswer2.Size = new System.Drawing.Size(244, 20);
-            this.txtAnswer2.TabIndex = 10;
-            this.txtAnswer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtAnswer2, "Enter 2nd Answer for Password Recovery");
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -323,17 +350,8 @@
             this.label7.Location = new System.Drawing.Point(357, 342);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 13);
-            this.label7.TabIndex = 38;
+            this.label7.TabIndex = 26;
             this.label7.Text = "Answer #2 (Not Case-Sensitive)";
-            // 
-            // txtAnswer1
-            // 
-            this.txtAnswer1.Location = new System.Drawing.Point(359, 247);
-            this.txtAnswer1.Name = "txtAnswer1";
-            this.txtAnswer1.Size = new System.Drawing.Size(244, 20);
-            this.txtAnswer1.TabIndex = 8;
-            this.txtAnswer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtAnswer1, "Enter 1st Answer for Password Recovery");
             // 
             // label8
             // 
@@ -342,17 +360,8 @@
             this.label8.Location = new System.Drawing.Point(357, 230);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(157, 13);
-            this.label8.TabIndex = 37;
+            this.label8.TabIndex = 24;
             this.label8.Text = "Answer #1 (Not Case-Sensitive)";
-            // 
-            // txtQuestion2
-            // 
-            this.txtQuestion2.Location = new System.Drawing.Point(360, 304);
-            this.txtQuestion2.Name = "txtQuestion2";
-            this.txtQuestion2.Size = new System.Drawing.Size(244, 20);
-            this.txtQuestion2.TabIndex = 9;
-            this.txtQuestion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtQuestion2, "Enter 2nd Question for Password Recovery");
             // 
             // label9
             // 
@@ -361,17 +370,8 @@
             this.label9.Location = new System.Drawing.Point(358, 288);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
-            this.label9.TabIndex = 36;
+            this.label9.TabIndex = 25;
             this.label9.Text = "Question #2";
-            // 
-            // txtQuestion1
-            // 
-            this.txtQuestion1.Location = new System.Drawing.Point(359, 190);
-            this.txtQuestion1.Name = "txtQuestion1";
-            this.txtQuestion1.Size = new System.Drawing.Size(244, 20);
-            this.txtQuestion1.TabIndex = 7;
-            this.txtQuestion1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtQuestion1, "Enter 1st Question for Password Recovery");
             // 
             // label10
             // 
@@ -380,7 +380,7 @@
             this.label10.Location = new System.Drawing.Point(356, 171);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 35;
+            this.label10.TabIndex = 23;
             this.label10.Text = "Question #1";
             // 
             // Admin

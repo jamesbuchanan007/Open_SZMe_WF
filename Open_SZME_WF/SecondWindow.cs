@@ -534,6 +534,18 @@ namespace Open_SZME_WF
             var copyPw = txt2ndFormPassword.Text;
             Clipboard.SetText(copyPw);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Cancel?", "Open SZMe", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                ClearAllTextBoxes();
+                Reset();
+                ReloadRecordAndComboBox();
+            }
+            
+        }
     }
 
     public class RecordViewModel

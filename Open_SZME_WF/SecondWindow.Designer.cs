@@ -53,6 +53,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +115,7 @@
             this.btn2ndFormNew.FlatAppearance.BorderSize = 0;
             this.btn2ndFormNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormNew.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormNew.Location = new System.Drawing.Point(87, 181);
+            this.btn2ndFormNew.Location = new System.Drawing.Point(46, 181);
             this.btn2ndFormNew.Name = "btn2ndFormNew";
             this.btn2ndFormNew.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormNew.TabIndex = 5;
@@ -129,7 +130,7 @@
             this.btn2ndFormEdit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormEdit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormEdit.Location = new System.Drawing.Point(168, 181);
+            this.btn2ndFormEdit.Location = new System.Drawing.Point(127, 181);
             this.btn2ndFormEdit.Name = "btn2ndFormEdit";
             this.btn2ndFormEdit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormEdit.TabIndex = 6;
@@ -144,7 +145,7 @@
             this.btn2ndFormDelete.FlatAppearance.BorderSize = 0;
             this.btn2ndFormDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormDelete.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormDelete.Location = new System.Drawing.Point(249, 181);
+            this.btn2ndFormDelete.Location = new System.Drawing.Point(208, 181);
             this.btn2ndFormDelete.Name = "btn2ndFormDelete";
             this.btn2ndFormDelete.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormDelete.TabIndex = 7;
@@ -324,12 +325,28 @@
             this.labelVersion.TabIndex = 29;
             this.labelVersion.Text = "Version: Debug";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(289, 181);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.button1, "Cancel");
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SecondWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(413, 593);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdminRPGToClip);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.label6);
@@ -390,5 +407,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Button btnAdminRPGToClip;
+        private System.Windows.Forms.Button button1;
     }
 }
