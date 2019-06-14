@@ -498,10 +498,10 @@ namespace Open_SZME_WF
             {
                 connection.Open();
 
-                sql = "Select * From PasswordsTable Where IsEnabled = 1";
+                sql = "Select * From PasswordsView Where IsEnabled = 1";
                 command = new SqlCommand(sql, connection);
                 adapter.SelectCommand = command;
-                adapter.Fill(ds, "PasswordsTable");
+                adapter.Fill(ds, "PasswordsView");
                 adapter.Dispose();
                 command.Dispose();
                 connection.Close();
