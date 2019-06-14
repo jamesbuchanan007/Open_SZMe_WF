@@ -418,9 +418,11 @@
             this.Controls.Add(this.txtAdminOldPassword);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open SZMe - Admin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Admin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAdminNumCharacters)).EndInit();
             this.ResumeLayout(false);

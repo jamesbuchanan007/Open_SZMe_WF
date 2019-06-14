@@ -334,5 +334,14 @@ namespace Open_SZME_WF
             Clipboard.SetText(txtAdminRandomPassword.Text);
             Hide();
         }
+
+        private void Admin_KeyDown(object sender, KeyEventArgs e)
+        {
+            //KEYBOARD SHORT CUT FOR SAVE
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                btnAdminSubmit_Click(sender,e);
+            }
+        }
     }
 }
