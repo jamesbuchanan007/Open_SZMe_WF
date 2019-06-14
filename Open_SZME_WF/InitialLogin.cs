@@ -37,10 +37,34 @@ namespace Open_SZME_WF
                     return;
                 }
 
+                if (string.IsNullOrEmpty(txtQuestion1.Text))
+                {
+                    MessageBox.Show("Please Enter Question #1", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtQuestion1.Focus();
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtAnswer1.Text))
+                {
+                    MessageBox.Show("Please Enter Answer #1", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtAnswer1.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtQuestion2.Text))
+                {
+                    MessageBox.Show("Please Enter Question #2", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtQuestion2.Focus();
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtAnswer2.Text))
+                {
+                    MessageBox.Show("Please Enter Answer #2", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtAnswer2.Focus();
+                    return;
+                }
+
                 SqlConnection connection;
                 SqlCommand command;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataSet ds = new DataSet();
                 string sql;
 
                 var connectionString = Settings.Default.OpenSZMeDbConnectionString;
@@ -51,11 +75,19 @@ namespace Open_SZME_WF
                 {
                     connection.Open();
 
-                    sql = "INSERT INTO LoginTable (LoginPassword) VALUES ('" + txtInitialPassword.Text + "')";
+                    sql = "INSERT INTO LoginTable (" +
+                          "LoginPassword," +
+                          "LoginQuestionOne," +
+                          "LoginAnswerOne," +
+                          "LoginQuestionTwo," +
+                          "LoginAnswerTwo) VALUES ('" + 
+                          txtInitialPassword.Text.Trim() + "','"+
+                          txtQuestion1.Text.Trim() + "','"+
+                          txtAnswer1.Text.Trim() + "','"+
+                          txtQuestion2.Text.Trim() + "','"+
+                          txtAnswer2.Text.Trim() + "')";
                     command = new SqlCommand(sql, connection);
-                    adapter.SelectCommand = command;
-                    adapter.Fill(ds, "LoginTable");
-                    adapter.Dispose();
+                    command.ExecuteNonQuery();
                     command.Dispose();
                     connection.Close();
 
@@ -77,7 +109,7 @@ namespace Open_SZME_WF
 
             if (result == DialogResult.Yes)
             {
-                Environment.Exit(1);
+                Environment.Exit(0);
             }
         }
     }
