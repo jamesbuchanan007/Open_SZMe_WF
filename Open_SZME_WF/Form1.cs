@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Deployment.Application;
+using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Forms;
 using Open_SZME_WF.Properties;
 
@@ -11,7 +14,8 @@ namespace Open_SZME_WF
         public Form1()
         {
             InitializeComponent();
-            var version = Application.ProductVersion;
+            var version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+          
             labelVersion.Text = "Version: " + version;
         }
 

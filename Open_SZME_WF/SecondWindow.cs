@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Deployment.Application;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using Open_SZME_WF.Properties;
 
@@ -18,7 +20,7 @@ namespace Open_SZME_WF
         public SecondWindow()
         {
             InitializeComponent();
-            var version = "Version: " + Application.ProductVersion;
+            var version = "Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion;
             labelVersion.Text = version;
             RecordIndex = 0;
             RecordId = 0;
