@@ -114,7 +114,7 @@
             this.btn2ndFormNew.FlatAppearance.BorderSize = 0;
             this.btn2ndFormNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormNew.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormNew.Location = new System.Drawing.Point(45, 177);
+            this.btn2ndFormNew.Location = new System.Drawing.Point(87, 181);
             this.btn2ndFormNew.Name = "btn2ndFormNew";
             this.btn2ndFormNew.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormNew.TabIndex = 5;
@@ -129,7 +129,7 @@
             this.btn2ndFormEdit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormEdit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormEdit.Location = new System.Drawing.Point(126, 177);
+            this.btn2ndFormEdit.Location = new System.Drawing.Point(168, 181);
             this.btn2ndFormEdit.Name = "btn2ndFormEdit";
             this.btn2ndFormEdit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormEdit.TabIndex = 6;
@@ -144,7 +144,7 @@
             this.btn2ndFormDelete.FlatAppearance.BorderSize = 0;
             this.btn2ndFormDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormDelete.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormDelete.Location = new System.Drawing.Point(207, 177);
+            this.btn2ndFormDelete.Location = new System.Drawing.Point(249, 181);
             this.btn2ndFormDelete.Name = "btn2ndFormDelete";
             this.btn2ndFormDelete.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormDelete.TabIndex = 7;
@@ -225,7 +225,7 @@
             this.btn2ndFormClearClipboard.FlatAppearance.BorderSize = 0;
             this.btn2ndFormClearClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormClearClipboard.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormClearClipboard.Location = new System.Drawing.Point(259, 367);
+            this.btn2ndFormClearClipboard.Location = new System.Drawing.Point(144, 367);
             this.btn2ndFormClearClipboard.Name = "btn2ndFormClearClipboard";
             this.btn2ndFormClearClipboard.Size = new System.Drawing.Size(106, 23);
             this.btn2ndFormClearClipboard.TabIndex = 21;
@@ -251,7 +251,7 @@
             this.btn2ndFormSubmit.FlatAppearance.BorderSize = 0;
             this.btn2ndFormSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2ndFormSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn2ndFormSubmit.Location = new System.Drawing.Point(288, 177);
+            this.btn2ndFormSubmit.Location = new System.Drawing.Point(291, 367);
             this.btn2ndFormSubmit.Name = "btn2ndFormSubmit";
             this.btn2ndFormSubmit.Size = new System.Drawing.Size(75, 23);
             this.btn2ndFormSubmit.TabIndex = 28;
