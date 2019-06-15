@@ -52,13 +52,13 @@
             this.btnPasteUserId = new System.Windows.Forms.Button();
             this.btnPasteSite = new System.Windows.Forms.Button();
             this.btnCopyUserId = new System.Windows.Forms.Button();
+            this.btnCopyMisc = new System.Windows.Forms.Button();
+            this.btnPasteMisc = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.btnCopyMisc = new System.Windows.Forms.Button();
-            this.btnPasteMisc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,9 @@
             this.txt2ndFormPassword.TabIndex = 26;
             this.txt2ndFormPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt2ndFormPassword, "Current Password");
+            this.txt2ndFormPassword.UseSystemPasswordChar = true;
+            this.txt2ndFormPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormPassword_MouseDown);
+            this.txt2ndFormPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormPassword_MouseUp);
             // 
             // label2
             // 
@@ -184,6 +187,9 @@
             this.txt2ndFormUserId.TabIndex = 25;
             this.txt2ndFormUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt2ndFormUserId, "Current User Id");
+            this.txt2ndFormUserId.UseSystemPasswordChar = true;
+            this.txt2ndFormUserId.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormUserId_MouseDown);
+            this.txt2ndFormUserId.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormUserId_MouseUp);
             // 
             // txt2ndFormMisc
             // 
@@ -194,6 +200,9 @@
             this.txt2ndFormMisc.Size = new System.Drawing.Size(322, 105);
             this.txt2ndFormMisc.TabIndex = 27;
             this.toolTip1.SetToolTip(this.txt2ndFormMisc, "Miscellaneous Notes");
+            this.txt2ndFormMisc.UseSystemPasswordChar = true;
+            this.txt2ndFormMisc.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormMisc_MouseDown);
+            this.txt2ndFormMisc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txt2ndFormMisc_MouseUp);
             // 
             // btnAdmin
             // 
@@ -344,6 +353,37 @@
             this.btnCopyUserId.UseVisualStyleBackColor = false;
             this.btnCopyUserId.Click += new System.EventHandler(this.btnCopyUserId_Click);
             // 
+            // btnCopyMisc
+            // 
+            this.btnCopyMisc.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCopyMisc.FlatAppearance.BorderSize = 0;
+            this.btnCopyMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopyMisc.ForeColor = System.Drawing.Color.White;
+            this.btnCopyMisc.Location = new System.Drawing.Point(43, 553);
+            this.btnCopyMisc.Name = "btnCopyMisc";
+            this.btnCopyMisc.Size = new System.Drawing.Size(39, 23);
+            this.btnCopyMisc.TabIndex = 36;
+            this.btnCopyMisc.Text = "Copy";
+            this.toolTip1.SetToolTip(this.btnCopyMisc, "Copy Miscellaneous to Clipboard");
+            this.btnCopyMisc.UseVisualStyleBackColor = false;
+            this.btnCopyMisc.Click += new System.EventHandler(this.btnCopyMisc_Click);
+            // 
+            // btnPasteMisc
+            // 
+            this.btnPasteMisc.BackColor = System.Drawing.Color.Green;
+            this.btnPasteMisc.Enabled = false;
+            this.btnPasteMisc.FlatAppearance.BorderSize = 0;
+            this.btnPasteMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasteMisc.ForeColor = System.Drawing.Color.White;
+            this.btnPasteMisc.Location = new System.Drawing.Point(88, 553);
+            this.btnPasteMisc.Name = "btnPasteMisc";
+            this.btnPasteMisc.Size = new System.Drawing.Size(50, 23);
+            this.btnPasteMisc.TabIndex = 35;
+            this.btnPasteMisc.Text = "Paste";
+            this.toolTip1.SetToolTip(this.btnPasteMisc, "Paste Misc from Clipboard");
+            this.btnPasteMisc.UseVisualStyleBackColor = false;
+            this.btnPasteMisc.Click += new System.EventHandler(this.btnPasteMisc_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -393,40 +433,8 @@
             this.labelVersion.TabIndex = 29;
             this.labelVersion.Text = "Version: Debug";
             // 
-            // btnCopyMisc
-            // 
-            this.btnCopyMisc.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCopyMisc.FlatAppearance.BorderSize = 0;
-            this.btnCopyMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopyMisc.ForeColor = System.Drawing.Color.White;
-            this.btnCopyMisc.Location = new System.Drawing.Point(43, 553);
-            this.btnCopyMisc.Name = "btnCopyMisc";
-            this.btnCopyMisc.Size = new System.Drawing.Size(39, 23);
-            this.btnCopyMisc.TabIndex = 36;
-            this.btnCopyMisc.Text = "Copy";
-            this.toolTip1.SetToolTip(this.btnCopyMisc, "Copy Miscellaneous to Clipboard");
-            this.btnCopyMisc.UseVisualStyleBackColor = false;
-            this.btnCopyMisc.Click += new System.EventHandler(this.btnCopyMisc_Click);
-            // 
-            // btnPasteMisc
-            // 
-            this.btnPasteMisc.BackColor = System.Drawing.Color.Green;
-            this.btnPasteMisc.Enabled = false;
-            this.btnPasteMisc.FlatAppearance.BorderSize = 0;
-            this.btnPasteMisc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPasteMisc.ForeColor = System.Drawing.Color.White;
-            this.btnPasteMisc.Location = new System.Drawing.Point(88, 553);
-            this.btnPasteMisc.Name = "btnPasteMisc";
-            this.btnPasteMisc.Size = new System.Drawing.Size(50, 23);
-            this.btnPasteMisc.TabIndex = 35;
-            this.btnPasteMisc.Text = "Paste";
-            this.toolTip1.SetToolTip(this.btnPasteMisc, "Paste Misc from Clipboard");
-            this.btnPasteMisc.UseVisualStyleBackColor = false;
-            this.btnPasteMisc.Click += new System.EventHandler(this.btnPasteMisc_Click);
-            // 
             // SecondWindow
             // 
-            this.AcceptButton = this.btn2ndFormSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;

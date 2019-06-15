@@ -160,6 +160,13 @@ namespace Open_SZME_WF
             }
         }
 
+        private void RemovePasswordChar()
+        {
+            txt2ndFormUserId.UseSystemPasswordChar = false;
+            txt2ndFormPassword.UseSystemPasswordChar = false;
+            txt2ndFormMisc.UseSystemPasswordChar = false;
+        }
+
         private void btn2ndFormNew_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Add New Password?", "Open SZMe", MessageBoxButtons.YesNo,
@@ -173,6 +180,7 @@ namespace Open_SZME_WF
                 btn2ndFormDelete.Enabled = false;
                 EnableAllTextBoxes();
                 ClearAllTextBoxes();
+                RemovePasswordChar();
             }
         }
 
@@ -272,6 +280,8 @@ namespace Open_SZME_WF
 
                 btn2ndFormNew.Enabled = false;
                 btn2ndFormDelete.Enabled = false;
+
+                RemovePasswordChar();
             }
 
         }
@@ -487,6 +497,10 @@ namespace Open_SZME_WF
             btn2ndFormNew.Enabled = true;
             btn2ndFormEdit.Enabled = true;
             btn2ndFormDelete.Enabled = true;
+
+            txt2ndFormUserId.UseSystemPasswordChar = true;
+            txt2ndFormPassword.UseSystemPasswordChar = true;
+            txt2ndFormMisc.UseSystemPasswordChar = true;
         }
         public DataSet GetPassword()
         {
@@ -593,12 +607,42 @@ namespace Open_SZME_WF
 
         private void btnCopyMisc_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt2ndFormMisc.Text)) { Clipboard.SetText(txt2ndFormMisc.Text);}
+            if (!string.IsNullOrEmpty(txt2ndFormMisc.Text)) { Clipboard.SetText(txt2ndFormMisc.Text); }
         }
 
         private void btnPasteMisc_Click(object sender, EventArgs e)
         {
             txt2ndFormMisc.Text = Clipboard.GetText();
+        }
+
+        private void txt2ndFormUserId_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt2ndFormUserId.UseSystemPasswordChar = false;
+        }
+
+        private void txt2ndFormUserId_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt2ndFormUserId.UseSystemPasswordChar = true;
+        }
+
+        private void txt2ndFormPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt2ndFormPassword.UseSystemPasswordChar = false;
+        }
+
+        private void txt2ndFormPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt2ndFormPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txt2ndFormMisc_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt2ndFormMisc.UseSystemPasswordChar = false;
+        }
+
+        private void txt2ndFormMisc_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt2ndFormMisc.UseSystemPasswordChar = true;
         }
     }
 
