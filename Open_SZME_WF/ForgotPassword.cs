@@ -97,7 +97,8 @@ namespace Open_SZME_WF
 
             Hide();
             NewPassword np = new NewPassword();
-            np.Show();
+            np.StartPosition = FormStartPosition.CenterParent;
+            np.Show(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -108,7 +109,8 @@ namespace Open_SZME_WF
             {
                 Hide();
                 Form1 f1 =new Form1();
-                f1.Show();
+                f1.StartPosition = FormStartPosition.CenterParent;
+                f1.Show(this);
             }
         }
     }

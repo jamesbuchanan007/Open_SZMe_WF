@@ -51,7 +51,8 @@ namespace Open_SZME_WF
 
                 Hide();
                 Form1 f1 = new Form1();
-                f1.Show();
+                f1.StartPosition = FormStartPosition.CenterParent;
+                f1.Show(this);
             }
             catch (Exception ex)
             {

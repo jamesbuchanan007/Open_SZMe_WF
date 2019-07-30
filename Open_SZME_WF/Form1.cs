@@ -40,7 +40,8 @@ namespace Open_SZME_WF
             {
                 Hide();
                 SecondWindow sw = new SecondWindow();
-                sw.Show();
+                sw.StartPosition = FormStartPosition.CenterParent;
+                sw.Show(this);
             }
             else
             {
@@ -76,7 +77,8 @@ namespace Open_SZME_WF
                 if (password.Tables[0].Rows.Count == 0)
                     Hide();
                 InitialLogin il = new InitialLogin();
-                il.ShowDialog();
+                il.StartPosition = FormStartPosition.CenterParent;
+                il.ShowDialog(this);
 
                 password = GetPassword();
                 if (password.Tables[0].Rows.Count > 0) isInitialLogin = false;
@@ -152,7 +154,8 @@ namespace Open_SZME_WF
         {
             Hide();
             ForgotPassword fp = new ForgotPassword();
-            fp.Show();
+            fp.StartPosition = FormStartPosition.CenterParent;
+            fp.Show(this);
         }
     }
 }

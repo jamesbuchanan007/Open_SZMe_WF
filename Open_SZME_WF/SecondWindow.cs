@@ -138,7 +138,8 @@ namespace Open_SZME_WF
         {
             Hide();
             Admin ap = new Admin();
-            ap.ShowDialog();
+            ap.StartPosition = FormStartPosition.CenterParent;
+            ap.ShowDialog(this);
             Show();
         }
 
@@ -209,7 +210,6 @@ namespace Open_SZME_WF
             btnPasteSite.Enabled = false;
             btnPasteUserId.Enabled = false;
             btnPasteMisc.Enabled = false;
-            btn2ndFormClearClipboard.Enabled = false;
         }
         private void EnableAllButtons()
         {
@@ -221,7 +221,6 @@ namespace Open_SZME_WF
             btnPasteSite.Enabled = true;
             btnPasteUserId.Enabled = true;
             btnPasteMisc.Enabled = true;
-            btn2ndFormClearClipboard.Enabled = true;
         }
 
         private void DisableAllTextBoxes()
@@ -243,12 +242,10 @@ namespace Open_SZME_WF
         private void EnableClipboardButtons()
         {
             btn2ndFormPastePw.Enabled = true;
-            btn2ndFormClearClipboard.Enabled = true;
         }
         private void DisableClipboardButtons()
         {
             btn2ndFormPastePw.Enabled = false;
-            btn2ndFormClearClipboard.Enabled = false;
         }
 
         private void ClearAllTextBoxes()
