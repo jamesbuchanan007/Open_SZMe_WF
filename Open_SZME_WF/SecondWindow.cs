@@ -46,15 +46,30 @@ namespace Open_SZME_WF
 
             if (!backupCompleted)
             {
-                MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
+                var result = MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
+                    buf.ShowDialog(this);
+                }
+
+               
             }
 
-            var result = DateTime.Compare(backupDate, DateTime.Today);
-            if (result > 7)
+            var dateDiff = DateTime.Compare(backupDate, DateTime.Today);
+            if (dateDiff > 7)
             {
-                MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Exclamation);
+                var result = MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.Yes)
+                {
+                    var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
+                    buf.ShowDialog(this);
+                }
+
             }
         }
 

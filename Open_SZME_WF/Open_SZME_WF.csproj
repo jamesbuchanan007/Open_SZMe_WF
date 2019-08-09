@@ -79,6 +79,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FileHelpers, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.4.0\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -136,6 +139,12 @@
     <Compile Include="NewPassword.Designer.cs">
       <DependentUpon>NewPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\BackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\BackupForm.Designer.cs">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,9 @@
     <EmbeddedResource Include="NewPassword.resx">
       <DependentUpon>NewPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Test\BackupForm.resx">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="OpenSZMeDbDataSet1.xsc">
       <DependentUpon>OpenSZMeDbDataSet1.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -179,6 +191,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Open_SZME_WF_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
