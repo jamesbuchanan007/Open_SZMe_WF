@@ -26,7 +26,8 @@
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/Applications/Open SZMe/</UpdateUrl>
     <ProductName>Open SZMe</ProductName>
     <PublisherName>James K. Buchanan</PublisherName>
-    <ApplicationRevision>25</ApplicationRevision>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

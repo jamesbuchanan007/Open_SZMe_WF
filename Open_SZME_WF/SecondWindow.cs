@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Deployment.Application;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -28,6 +29,7 @@ namespace Open_SZME_WF
             RecordDictionary = new Dictionary<int, RecordViewModel>();
             ComboBoxDictionary = new Dictionary<int, string>();
 
+
             Reset();
             ReloadRecordAndComboBox();
 
@@ -37,7 +39,57 @@ namespace Open_SZME_WF
                 btn2ndFormNew.Enabled = true;
             }
 
+            var backupDataSet = GetBackupStatus();
+
+            var backupDate = (DateTime)backupDataSet.Tables[0].Rows[0]["BackupDate"];
+            var backupCompleted = (bool)backupDataSet.Tables[0].Rows[0]["BackupCompleted"];
+
+            if (!backupCompleted)
+            {
+                MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            }
+
+            var result = DateTime.Compare(backupDate, DateTime.Today);
+            if (result > 7)
+            {
+                MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Exclamation);
+            }
         }
+
+        private DataSet GetBackupStatus()
+        {
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            string sql;
+
+            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "SELECT TOP 1 * FROM BackupTable ORDER BY BackupId desc";
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "BackupTable");
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return ds;
+        }
+
         //LOAD COMBOBOX, BIND, AND SET RECORD ID
         private void LoadComboBoxDictionary()
         {
