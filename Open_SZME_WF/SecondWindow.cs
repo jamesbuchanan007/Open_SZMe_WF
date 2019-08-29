@@ -39,38 +39,39 @@ namespace Open_SZME_WF
                 btn2ndFormNew.Enabled = true;
             }
 
-            var backupDataSet = GetBackupStatus();
+            //BACKUP SECTION - COMMENT OUT UNTIL FINISHED 
+            //var backupDataSet = GetBackupStatus();
 
-            var backupDate = (DateTime)backupDataSet.Tables[0].Rows[0]["BackupDate"];
-            var backupCompleted = (bool)backupDataSet.Tables[0].Rows[0]["BackupCompleted"];
+            //var backupDate = (DateTime)backupDataSet.Tables[0].Rows[0]["BackupDate"];
+            //var backupCompleted = (bool)backupDataSet.Tables[0].Rows[0]["BackupCompleted"];
 
-            if (!backupCompleted)
-            {
-                var result = MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Question);
+            //if (!backupCompleted)
+            //{
+            //    var result = MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
+            //         MessageBoxIcon.Question);
 
-                if (result == DialogResult.Yes)
-                {
-                    var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
-                    buf.ShowDialog(this);
-                }
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
+            //        buf.ShowDialog(this);
+            //    }
 
                
-            }
+            //}
 
-            var dateDiff = DateTime.Compare(backupDate, DateTime.Today);
-            if (dateDiff > 7)
-            {
-                var result = MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Exclamation);
+            //var dateDiff = DateTime.Compare(backupDate, DateTime.Today);
+            //if (dateDiff > 7)
+            //{
+            //    var result = MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
+            //         MessageBoxIcon.Exclamation);
 
-                if (result == DialogResult.Yes)
-                {
-                    var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
-                    buf.ShowDialog(this);
-                }
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
+            //        buf.ShowDialog(this);
+            //    }
 
-            }
+            //}
         }
 
         private DataSet GetBackupStatus()
