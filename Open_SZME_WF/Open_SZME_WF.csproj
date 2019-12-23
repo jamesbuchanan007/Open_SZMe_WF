@@ -83,6 +83,7 @@
       <HintPath>..\packages\FileHelpers.3.4.0\lib\net45\FileHelpers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -252,6 +253,19 @@
       <DependentUpon>OpenSZMeDb.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Encyrption\Encyrption.csproj">
+      <Project>{022a61ad-d520-4f40-89b5-212ef8d9b588}</Project>
+      <Name>Encyrption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordStorage\PasswordStorage.csproj">
+      <Project>{7477acd4-51fc-4673-a0d7-e8b4a0262a2c}</Project>
+      <Name>PasswordStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,12 +20,16 @@ namespace Open_SZME_WF
             labelVersion.Text = "Version: " + version;
         }
 
+        #region Clear Form
         private void btnForm1Clear_Click(object sender, EventArgs e)
         {
             txtForm1Password.Clear();
             txtForm1Password.Focus();
         }
 
+        #endregion
+
+        #region Login Form
         private void Login()
         {
             var pw = GetLoginPassword();
@@ -36,7 +40,11 @@ namespace Open_SZME_WF
                 return;
             }
 
-            if (txtForm1Password.Text.Trim() == pw)
+            var goodHash = Settings.Default.Password;
+            var pwText = txtForm1Password.Text;
+            var passwordsMatch = PasswordStorage.PasswordStorage.VerifyPassword(pwText, goodHash);
+
+            if (passwordsMatch)
             {
                 Hide();
                 SecondWindow sw = new SecondWindow();
@@ -51,10 +59,18 @@ namespace Open_SZME_WF
             }
         }
 
+        #endregion
+
+        #region Submit
+
         private void buttonForm1Submit_Click(object sender, EventArgs e)
         {
             Login();
         }
+
+        #endregion
+
+        #region Press Enter
 
         private void txtForm1Password_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -64,91 +80,37 @@ namespace Open_SZME_WF
             }
         }
 
+        #endregion
+
+        #region Form Load
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            var ds = GetPassword();
-
-            var isInitialLogin = ds.Tables[0].Rows.Count == 0;
-
-            while (isInitialLogin)
+            while (string.IsNullOrEmpty(Settings.Default.Password))
             {
-                var password = GetPassword();
-
-                if (password.Tables[0].Rows.Count == 0)
-                    Hide();
-                InitialLogin il = new InitialLogin();
-                il.StartPosition = FormStartPosition.CenterParent;
+                var il = new InitialLogin
+                {
+                    StartPosition = FormStartPosition.CenterParent
+                };
                 il.ShowDialog(this);
-
-                password = GetPassword();
-                if (password.Tables[0].Rows.Count > 0) isInitialLogin = false;
             }
 
             Show();
         }
 
-        public DataSet GetPassword()
-        {
-            SqlConnection connection;
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            string sql;
 
-            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+        #endregion
 
-            connection = new SqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-
-                sql = "Select TOP 1 * from LoginTable ORDER BY LoginId Desc";
-                command = new SqlCommand(sql, connection);
-                adapter.SelectCommand = command;
-                adapter.Fill(ds, "LoginTable");
-                adapter.Dispose();
-                command.Dispose();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return ds;
-        }
+        #region Get Login Password
 
         public string GetLoginPassword()
         {
-            SqlConnection connection;
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            string sql;
-            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
-
-            connection = new SqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-
-                sql = "Select TOP 1 * from LoginTable ORDER BY LoginId Desc";
-                command = new SqlCommand(sql, connection);
-                adapter.SelectCommand = command;
-                adapter.Fill(ds, "LoginTable");
-                adapter.Dispose();
-                command.Dispose();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return ds.Tables[0].Rows[0]["LoginPassword"].ToString();
+            return Settings.Default.Password;
         }
+
+        #endregion
+
+        #region Forgotten Password
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
         {
@@ -157,5 +119,7 @@ namespace Open_SZME_WF
             fp.StartPosition = FormStartPosition.CenterParent;
             fp.Show(this);
         }
+
+        #endregion
     }
 }

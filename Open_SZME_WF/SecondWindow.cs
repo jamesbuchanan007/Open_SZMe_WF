@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Deployment.Application;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -29,7 +30,6 @@ namespace Open_SZME_WF
             RecordDictionary = new Dictionary<int, RecordViewModel>();
             ComboBoxDictionary = new Dictionary<int, string>();
 
-
             Reset();
             ReloadRecordAndComboBox();
 
@@ -38,40 +38,6 @@ namespace Open_SZME_WF
                 DisableAllButtons();
                 btn2ndFormNew.Enabled = true;
             }
-
-            //BACKUP SECTION - COMMENT OUT UNTIL FINISHED 
-            //var backupDataSet = GetBackupStatus();
-
-            //var backupDate = (DateTime)backupDataSet.Tables[0].Rows[0]["BackupDate"];
-            //var backupCompleted = (bool)backupDataSet.Tables[0].Rows[0]["BackupCompleted"];
-
-            //if (!backupCompleted)
-            //{
-            //    var result = MessageBox.Show("Last Backup Not Completed.  Retry?", "Open SZMe", MessageBoxButtons.YesNo,
-            //         MessageBoxIcon.Question);
-
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
-            //        buf.ShowDialog(this);
-            //    }
-
-               
-            //}
-
-            //var dateDiff = DateTime.Compare(backupDate, DateTime.Today);
-            //if (dateDiff > 7)
-            //{
-            //    var result = MessageBox.Show("Last Backup Longer than 7 days.  Backup Now?", "OpenSZMe", MessageBoxButtons.YesNo,
-            //         MessageBoxIcon.Exclamation);
-
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        var buf = new BackupForm {StartPosition = FormStartPosition.CenterParent};
-            //        buf.ShowDialog(this);
-            //    }
-
-            //}
         }
 
         private DataSet GetBackupStatus()
@@ -399,14 +365,31 @@ namespace Open_SZME_WF
             }
         }
 
+        #region Submit
+
         private void btn2ndFormSubmit_Click(object sender, EventArgs e)
         {
-            var ps = txt2ndFormProgramSite;
+            var invalidCharacters = Path.GetInvalidPathChars();
+            var site = txt2ndFormProgramSite;
+
+            //CHECK IF THERE ARE ANY INVALID CHARACTERS IN SITE NAME
+            foreach (var a in site.Text)
+            {
+                foreach (var c in invalidCharacters)
+                {
+                    if (a.CompareTo(c) == 0)
+                    {
+                        MessageBox.Show("Invalid Character in Site Name: " + c, "Open SZMe",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+
             var userId = txt2ndFormUserId;
             var pw = txt2ndFormPassword;
             var misc = txt2ndFormMisc;
 
-            if (string.IsNullOrEmpty(ps.Text))
+            if (string.IsNullOrEmpty(site.Text))
             {
                 MessageBox.Show("Please Enter Program / Site", "Open SZMe", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -440,50 +423,20 @@ namespace Open_SZME_WF
             //ADD NEW RECORD
             if (btn2ndFormNew.Enabled)
             {
-                //NEED TO MVOE THIS INSIDE 'ADD NEW RECORD'
-                var questionSave = "Save Record for '" + ps.Text + "'?";
+                //NEED TO move THIS INSIDE 'ADD NEW RECORD'
+                var questionSave = "Save Record for '" + site.Text + "'?";
 
                 DialogResult submitResult = MessageBox.Show(questionSave, "Open SZMe", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (submitResult == DialogResult.Yes)
                 {
-                    SqlConnection connection;
-                    SqlCommand command;
-                    string sql;
+                    //ENCRYPT AND SAVE
+                    var saved = Encyrption.Class1.EncryptData(site.Text, userId.Text, pw.Text, misc.Text);
 
-                    var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+                    if (saved) MessageBox.Show("Record Saved", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Record Not Saved", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    connection = new SqlConnection(connectionString);
-
-                    try
-                    {
-                        connection.Open();
-
-                        sql = "INSERT INTO PasswordsTable " +
-                              "(PasswordSite," +
-                              "PasswordPassword," +
-                              "PasswordUserId," +
-                              "PasswordMisc," +
-                              "IsEnabled) " +
-                              "VALUES ('" +
-                              ps.Text.Trim() + "', '" +
-                              pw.Text.Trim() + "','" +
-                              userId.Text.Trim() + "','" +
-                              misc.Text + "',1)";
-                        command = new SqlCommand(sql, connection);
-                        command.ExecuteNonQuery();
-                        command.Dispose();
-                        connection.Close();
-
-                        MessageBox.Show("Password Added", "Open SZMe", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     Reset();
 
                     ReloadRecordAndComboBox();
@@ -493,52 +446,38 @@ namespace Open_SZME_WF
                 return;
             }
 
+            //EDIT RECORD
             if (btn2ndFormEdit.Enabled)
             {
-                SqlConnection connection;
-                SqlCommand command;
-                string sql;
+                var questionSave = "Edit Record for '" + site.Text + "'?";
 
-                var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+                DialogResult submitResult = MessageBox.Show(questionSave, "Open SZMe", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-                connection = new SqlConnection(connectionString);
-
-                try
+                if (submitResult == DialogResult.Yes)
                 {
-                    connection.Open();
+                    //ENCRYPT AND SAVE
+                    var saved = Encyrption.Class1.EncryptData(site.Text, userId.Text, pw.Text, misc.Text);
 
-                    sql = "UPDATE PasswordsTable SET " +
-                          "PasswordPassword = '" + pw.Text.Trim() + "', " +
-                          "PasswordUserId = '" + userId.Text.Trim() + "', " +
-                          "PasswordSite = '" + ps.Text.Trim() + "', " +
-                          "PasswordMisc = '" + misc.Text.Trim() + "', " +
-                          "IsEnabled = 1 " +
-                          "WHERE PasswordId = " + RecordId;
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-                    command.Dispose();
-                    connection.Close();
-
-                    MessageBox.Show("Password Updated for " + RecordDictionary[RecordIndex].Site, "Open SZMe", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    if (saved) MessageBox.Show("Record Saved", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Record Not Saved", "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     Reset();
-
                     ReloadRecordAndComboBox();
+                    cmb2ndFormProgramOrSite.SelectedIndex = ComboBoxDictionary.Count - 1;
+                    return;
+                }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 Reset();
-
                 ReloadRecordAndComboBox();
                 cmb2ndFormProgramOrSite.SelectedIndex = RecordIndex;
                 return;
             }
+
             Reset();
         }
+
+        #endregion
 
         private void ReloadRecordAndComboBox()
         {

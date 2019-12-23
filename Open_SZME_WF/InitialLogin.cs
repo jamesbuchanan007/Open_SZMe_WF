@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Deployment.Application;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using Open_SZME_WF.Properties;
+using PasswordStorage;
 
 namespace Open_SZME_WF
 {
@@ -19,10 +21,10 @@ namespace Open_SZME_WF
                 : ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
             labelVersion.Text = "Version: " + version;
         }
-
+        #region Password Key Press
         private void txtInitialPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char) Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 if (string.IsNullOrEmpty(txtInitialPassword.Text))
                 {
@@ -68,46 +70,17 @@ namespace Open_SZME_WF
                     txtAnswer2.Focus();
                     return;
                 }
-
-                SqlConnection connection;
-                SqlCommand command;
-                string sql;
-
-                var connectionString = Settings.Default.OpenSZMeDbConnectionString;
-
-                connection = new SqlConnection(connectionString);
-
-                try
-                {
-                    connection.Open();
-
-                    sql = "INSERT INTO LoginTable (" +
-                          "LoginPassword," +
-                          "LoginQuestionOne," +
-                          "LoginAnswerOne," +
-                          "LoginQuestionTwo," +
-                          "LoginAnswerTwo) VALUES ('" +
-                          txtInitialPassword.Text.Trim() + "','" +
-                          txtQuestion1.Text.Trim() + "','" +
-                          txtAnswer1.Text.Trim() + "','" +
-                          txtQuestion2.Text.Trim() + "','" +
-                          txtAnswer2.Text.Trim() + "')";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-                    command.Dispose();
-                    connection.Close();
-
-                    MessageBox.Show("Initial Set-Up Complete", "Open SZMe", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    Hide();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
+                //Hash and Salt Password
+                Settings.Default.Password = PasswordStorage.PasswordStorage.CreateHash(txtInitialPassword.Text.Trim());
+                Settings.Default.AnswerOne = PasswordStorage.PasswordStorage.CreateHash(txtAnswer1.Text.Trim());
+                Settings.Default.AnswerTwo = PasswordStorage.PasswordStorage.CreateHash(txtAnswer2.Text.Trim());
             }
         }
 
+        #endregion
+
+        #region Initial Login Cancel
         private void btnInitialLoginCancel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Cancel Set Up?", "Open SZMe", MessageBoxButtons.YesNo,
@@ -119,6 +92,9 @@ namespace Open_SZME_WF
             }
         }
 
+        #endregion
+
+        #region Save Setup
         private void btnSaveSetUp_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtInitialPassword.Text))
@@ -164,41 +140,16 @@ namespace Open_SZME_WF
                 return;
             }
 
-            SqlConnection connection;
-            SqlCommand command;
-            string sql;
-            var connectionString = Settings.Default.OpenSZMeDbConnectionString;
+            //Hash and Salt Password
+            Settings.Default.Password = PasswordStorage.PasswordStorage.CreateHash(txtInitialPassword.Text.Trim());
+            Settings.Default.AnswerOne = PasswordStorage.PasswordStorage.CreateHash(txtAnswer1.Text.Trim());
+            Settings.Default.AnswerTwo = PasswordStorage.PasswordStorage.CreateHash(txtAnswer2.Text.Trim());
 
-            connection = new SqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-
-                sql = "INSERT INTO LoginTable (" +
-                      "LoginPassword," +
-                      "LoginQuestionOne," +
-                      "LoginAnswerOne," +
-                      "LoginQuestionTwo," +
-                      "LoginAnswerTwo) VALUES ('" +
-                      txtInitialPassword.Text.Trim() + "','" +
-                      txtQuestion1.Text.Trim() + "','" +
-                      txtAnswer1.Text.Trim() + "','" +
-                      txtQuestion2.Text.Trim() + "','" +
-                      txtAnswer2.Text.Trim() + "')";
-                command = new SqlCommand(sql, connection);
-                command.ExecuteNonQuery();
-                command.Dispose();
-                connection.Close();
-
-                MessageBox.Show("Initial Set-Up Complete", "Open SZMe", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Open SZMe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Initial Set-Up Complete", "Open SZMe", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            Hide();
         }
+
+        #endregion
     }
 }

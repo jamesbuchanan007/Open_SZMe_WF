@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open_SZME_WF", "Open_SZME_WF\Open_SZME_WF.csproj", "{7AF3FDAC-D6D9-41A1-93BA-A74DDF05161F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordStorage", "PasswordStorage\PasswordStorage.csproj", "{7477ACD4-51FC-4673-A0D7-E8B4A0262A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encyrption", "Encyrption\Encyrption.csproj", "{022A61AD-D520-4F40-89B5-212EF8D9B588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7AF3FDAC-D6D9-41A1-93BA-A74DDF05161F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF3FDAC-D6D9-41A1-93BA-A74DDF05161F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF3FDAC-D6D9-41A1-93BA-A74DDF05161F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7477ACD4-51FC-4673-A0D7-E8B4A0262A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7477ACD4-51FC-4673-A0D7-E8B4A0262A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7477ACD4-51FC-4673-A0D7-E8B4A0262A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7477ACD4-51FC-4673-A0D7-E8B4A0262A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022A61AD-D520-4F40-89B5-212EF8D9B588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022A61AD-D520-4F40-89B5-212EF8D9B588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022A61AD-D520-4F40-89B5-212EF8D9B588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022A61AD-D520-4F40-89B5-212EF8D9B588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
